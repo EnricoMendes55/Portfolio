@@ -1,0 +1,290 @@
+{
+  "nav": {
+    "home": "Home",
+    "trajectory": "Trajetória",
+    "impact": "Impacto",
+    "cases": "Cases",
+    "skills": "Competências",
+    "resume": "Currículo",
+    "contact": "Contato",
+    "hireMe": "Vamos conversar"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Enrico Mendes Vienhage",
+    "role": "Front-end Development Supervisor",
+    "subtitle": "Transformando processos, produtos e equipes através de tecnologia.",
+    "metrics": [
+      { "value": "+4", "label": "anos em Front-end" },
+      { "value": "7",  "label": "profissionais liderados" },
+      { "value": "3",  "label": "idiomas" },
+      { "value": "★",  "label": "Especialista em Front-end, QA e Liderança Técnica" }
+    ],
+    "cta": {
+      "resume":  "Download Resume",
+      "linkedin": "LinkedIn",
+      "github":   "GitHub",
+      "contact":  "Contato"
+    },
+    "scroll": "Role para explorar"
+  },
+  "trajectory": {
+    "label": "Trajetória",
+    "title": "Uma jornada de evolução contínua",
+    "subtitle": "De hospitais à liderança de times de tecnologia — cada etapa moldou uma visão mais completa de produto, pessoas e processo.",
+    "present": "Presente",
+    "events": [
+      {
+        "year": "2018",
+        "title": "Início da carreira",
+        "company": "Hospital Universitário de Florianópolis",
+        "role": "Recepção — Internação e Emergência"
+      },
+      {
+        "year": "2021",
+        "title": "Transição para TI",
+        "company": "Hospital Santa Terezinha",
+        "role": "TI"
+      },
+      {
+        "year": "2022",
+        "title": "Desenvolvedor Front-end",
+        "company": "apresenta.me",
+        "role": "Desenvolvedor Front-end"
+      },
+      {
+        "year": "2023",
+        "title": "Liderança Front-end",
+        "company": "apresenta.me",
+        "role": "Liderança Front-end"
+      },
+      {
+        "year": "2026",
+        "title": "Supervisor de Desenvolvimento Front-end",
+        "company": "apresenta.me",
+        "role": "Supervisor de Desenvolvimento Front-end",
+        "isCurrent": true
+      }
+    ]
+  },
+  "impact": {
+    "label": "Impacto",
+    "title": "Resultados que movem o negócio",
+    "subtitle": "Não apenas código — transformação real de processos, equipes e operações.",
+    "cards": [
+      {
+        "key": "team",
+        "icon": "team",
+        "title": "Estruturei um setor de Front-end praticamente do zero",
+        "description": "Quando entrei na empresa, não existia um setor de Front-end consolidado. Participei da criação de processos, padrões técnicos, ferramentas internas, métricas operacionais e cultura de qualidade.",
+        "results": [
+          "Equipe atual com 7 profissionais",
+          "Processos estruturados",
+          "Indicadores de desempenho",
+          "Maior previsibilidade operacional"
+        ]
+      },
+      {
+        "key": "design-system",
+        "icon": "design",
+        "title": "Criação de Design System",
+        "description": "Desenvolvimento de biblioteca de componentes reutilizáveis alinhada à capacidade produtiva da empresa.",
+        "results": [
+          "Consistência visual",
+          "Menos retrabalho",
+          "Escalabilidade",
+          "Agilidade de entrega"
+        ]
+      },
+      {
+        "key": "architecture",
+        "icon": "architecture",
+        "title": "Modernização da Arquitetura Front-end",
+        "description": "Transformação de uma base CSS monolítica para uma arquitetura modular baseada em variáveis, reutilização e manutenção simplificada.",
+        "results": [
+          "Melhor manutenção",
+          "Menor acoplamento",
+          "Maior produtividade",
+          "Melhor qualidade técnica"
+        ]
+      },
+      {
+        "key": "metrics",
+        "icon": "metrics",
+        "title": "Cultura orientada por métricas",
+        "description": "Criação de indicadores, controle de tempo, acompanhamento de tarefas e ferramentas internas para análise de produtividade.",
+        "results": [
+          "Dados para tomada de decisão",
+          "Maior transparência",
+          "Evolução contínua"
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "label": "Cases",
+    "title": "Projetos que definem minha abordagem",
+    "subtitle": "Problemas reais, soluções pragmáticas, impacto mensurável.",
+    "seeDetails": "Ver detalhes",
+    "close": "Fechar",
+    "problem": "Problema",
+    "solution": "Solução",
+    "impact": "Impacto",
+    "techStack": "Stack utilizada",
+    "items": [
+      {
+        "key": "ai-briefing",
+        "title": "Briefing Inteligente com IA",
+        "category": "AI · Produto",
+        "summary": "Sistema dinâmico de briefing com inteligência artificial substituindo processo manual por formulários.",
+        "tags": ["Vue 3", "IA", "UX Design"],
+        "problem": "O briefing era realizado via Google Forms, gerando inconsistências de dados e alto índice de retrabalho para a equipe de produção.",
+        "solution": "Criação de um sistema dinâmico de briefing utilizando inteligência artificial para geração de resultados em tempo real, adaptando perguntas com base nas respostas anteriores do cliente.",
+        "impact": [
+          "Melhor experiência do cliente",
+          "Redução significativa de retrabalho",
+          "Maior velocidade operacional"
+        ]
+      },
+      {
+        "key": "qa-system",
+        "title": "Sistema Automatizado de QA",
+        "category": "QA · Processo",
+        "summary": "Checklist padronizado e sistema automatizado de validação de entregas eliminando avaliações subjetivas.",
+        "tags": ["QA", "Automação", "Processo"],
+        "problem": "A avaliação da qualidade das entregas era subjetiva, sem critérios definidos, levando a inconsistências e dificuldade de medir evolução da equipe.",
+        "solution": "Criação de checklist padronizado e sistema automatizado de validação com critérios objetivos para cada tipo de entrega.",
+        "impact": [
+          "Padronização da qualidade",
+          "Redução de erros",
+          "Maior previsibilidade"
+        ]
+      },
+      {
+        "key": "design-system",
+        "title": "Design System Corporativo",
+        "category": "Design System · Front-end",
+        "summary": "Biblioteca de componentes reutilizáveis que eliminou inconsistências visuais e acelerou entregas.",
+        "tags": ["Design System", "Vue 3", "LESS", "Figma"],
+        "problem": "Layouts inconsistentes e totalmente dependentes de criação manual a cada novo projeto, sem aproveitamento entre entregas.",
+        "solution": "Criação de biblioteca de componentes reutilizáveis e padronizados, com documentação de uso e integração com o processo de design.",
+        "impact": [
+          "Escalabilidade de entregas",
+          "Maior velocidade de produção",
+          "Padronização visual consistente"
+        ]
+      },
+      {
+        "key": "people-management",
+        "title": "Estruturação de Gestão e Desenvolvimento de Equipe",
+        "category": "Liderança · Pessoas",
+        "summary": "Implementação de metas, PDIs e acompanhamento de desempenho transformando a evolução do time.",
+        "tags": ["Liderança", "PDI", "Gestão", "Mentoria"],
+        "problem": "Ausência de processos claros de evolução profissional, sem metas definidas ou acompanhamento estruturado dos profissionais da equipe.",
+        "solution": "Implementação de metas, PDIs individuais, acompanhamento de desempenho e desenvolvimento técnico com revisões periódicas.",
+        "impact": [
+          "Maior crescimento da equipe",
+          "Maior engajamento",
+          "Maior previsibilidade de resultados"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "label": "Competências",
+    "title": "Tecnologias e práticas que domino",
+    "subtitle": "Uma base técnica sólida combinada com visão de produto e liderança de pessoas.",
+    "categories": [
+      {
+        "key": "frontend",
+        "icon": "code",
+        "label": "Front-end",
+        "items": ["HTML5", "CSS3", "JavaScript", "jQuery", "React", "TypeScript", "Responsive Design"]
+      },
+      {
+        "key": "design",
+        "icon": "design",
+        "label": "Design",
+        "items": ["Figma", "Auto Layout", "UI Design", "UX Design", "Design Systems"]
+      },
+      {
+        "key": "quality",
+        "icon": "shield",
+        "label": "Qualidade",
+        "items": ["QA", "Code Review", "Process Validation", "Checklist Automation"]
+      },
+      {
+        "key": "leadership",
+        "icon": "people",
+        "label": "Liderança",
+        "items": ["Technical Leadership", "People Management", "Mentoring", "Process Improvement", "Product Vision"]
+      },
+      {
+        "key": "productivity",
+        "icon": "rocket",
+        "label": "Produtividade",
+        "items": ["Artificial Intelligence", "Workflow Optimization", "Automation", "Metrics", "Continuous Improvement"]
+      }
+    ]
+  },
+  "resume": {
+    "label": "Currículo",
+    "title": "Experiência consolidada",
+    "subtitle": "Um documento que resume minha trajetória, competências e resultados.",
+    "download": "Baixar Currículo (PDF)",
+    "downloadLang": "Baixar em {lang}",
+    "certifications": {
+      "title": "Certificações e formações",
+      "empty": "Certificações serão adicionadas em breve."
+    }
+  },
+  "contact": {
+    "label": "Contato",
+    "title": "Vamos conversar",
+    "subtitle": "Aberto a novas oportunidades de liderança técnica, consultoria e colaboração.",
+    "links": [
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "description": "Conecte-se e acompanhe minha trajetória",
+        "url": "https://www.linkedin.com/in/enrico-mendes-vienhage/"
+      },
+      {
+        "id": "github",
+        "label": "GitHub",
+        "description": "Veja meus repositórios e contribuições",
+        "url": "https://github.com/EnricoMendes55"
+      },
+      {
+        "id": "email",
+        "label": "E-mail",
+        "description": "contatoenricomv@gmail.com",
+        "url": "mailto:contatoenricomv@gmail.com"
+      }
+    ],
+    "openNewTab": "Abrir em nova aba"
+  },
+  "footer": {
+    "made": "Desenvolvido com",
+    "by": "por Enrico Mendes Vienhage",
+    "rights": "Todos os direitos reservados."
+  },
+  "theme": {
+    "toggle": "Alternar tema",
+    "light": "Tema claro",
+    "dark": "Tema escuro"
+  },
+  "language": {
+    "select": "Idioma",
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  },
+  "a11y": {
+    "skipToContent": "Ir para o conteúdo principal",
+    "menuOpen": "Abrir menu de navegação",
+    "menuClose": "Fechar menu de navegação",
+    "externalLink": "Abre em nova aba",
+    "closeModal": "Fechar modal"
+  }
+}

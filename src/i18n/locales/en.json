@@ -1,0 +1,290 @@
+{
+  "nav": {
+    "home": "Home",
+    "trajectory": "Journey",
+    "impact": "Impact",
+    "cases": "Cases",
+    "skills": "Skills",
+    "resume": "Resume",
+    "contact": "Contact",
+    "hireMe": "Let's talk"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Enrico Mendes Vienhage",
+    "role": "Front-end Development Supervisor",
+    "subtitle": "Transforming processes, products and teams through technology.",
+    "metrics": [
+      { "value": "4+", "label": "years in Front-end" },
+      { "value": "7",  "label": "professionals led" },
+      { "value": "3",  "label": "languages" },
+      { "value": "★",  "label": "Specialist in Front-end, QA & Technical Leadership" }
+    ],
+    "cta": {
+      "resume":   "Download Resume",
+      "linkedin": "LinkedIn",
+      "github":   "GitHub",
+      "contact":  "Contact"
+    },
+    "scroll": "Scroll to explore"
+  },
+  "trajectory": {
+    "label": "Journey",
+    "title": "A journey of continuous growth",
+    "subtitle": "From hospitals to leading technology teams — each step shaped a more complete view of product, people, and process.",
+    "present": "Present",
+    "events": [
+      {
+        "year": "2018",
+        "title": "Career beginnings",
+        "company": "Hospital Universitário de Florianópolis",
+        "role": "Reception — Inpatient & Emergency"
+      },
+      {
+        "year": "2021",
+        "title": "Transition to IT",
+        "company": "Hospital Santa Terezinha",
+        "role": "IT"
+      },
+      {
+        "year": "2022",
+        "title": "Front-end Developer",
+        "company": "apresenta.me",
+        "role": "Front-end Developer"
+      },
+      {
+        "year": "2023",
+        "title": "Front-end Lead",
+        "company": "apresenta.me",
+        "role": "Front-end Lead"
+      },
+      {
+        "year": "2026",
+        "title": "Front-end Development Supervisor",
+        "company": "apresenta.me",
+        "role": "Front-end Development Supervisor",
+        "isCurrent": true
+      }
+    ]
+  },
+  "impact": {
+    "label": "Impact",
+    "title": "Results that move the business",
+    "subtitle": "Not just code — real transformation of processes, teams, and operations.",
+    "cards": [
+      {
+        "key": "team",
+        "icon": "team",
+        "title": "Built a Front-end department from the ground up",
+        "description": "When I joined the company, there was no established Front-end department. I helped create processes, technical standards, internal tools, operational metrics, and a quality culture.",
+        "results": [
+          "Current team with 7 professionals",
+          "Structured processes",
+          "Performance indicators",
+          "Greater operational predictability"
+        ]
+      },
+      {
+        "key": "design-system",
+        "icon": "design",
+        "title": "Design System creation",
+        "description": "Development of a reusable component library aligned with the company's production capacity.",
+        "results": [
+          "Visual consistency",
+          "Less rework",
+          "Scalability",
+          "Faster delivery"
+        ]
+      },
+      {
+        "key": "architecture",
+        "icon": "architecture",
+        "title": "Front-end architecture modernization",
+        "description": "Transformation from a monolithic CSS codebase to a modular architecture based on variables, reuse, and simplified maintenance.",
+        "results": [
+          "Better maintainability",
+          "Lower coupling",
+          "Higher productivity",
+          "Better technical quality"
+        ]
+      },
+      {
+        "key": "metrics",
+        "icon": "metrics",
+        "title": "Metrics-driven culture",
+        "description": "Creation of indicators, time tracking, task monitoring, and internal tools for productivity analysis.",
+        "results": [
+          "Data for decision making",
+          "Greater transparency",
+          "Continuous improvement"
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "label": "Cases",
+    "title": "Projects that define my approach",
+    "subtitle": "Real problems, pragmatic solutions, measurable impact.",
+    "seeDetails": "See details",
+    "close": "Close",
+    "problem": "Problem",
+    "solution": "Solution",
+    "impact": "Impact",
+    "techStack": "Tech stack",
+    "items": [
+      {
+        "key": "ai-briefing",
+        "title": "AI-Powered Intelligent Briefing",
+        "category": "AI · Product",
+        "summary": "Dynamic briefing system with AI replacing a manual process based on forms.",
+        "tags": ["Vue 3", "AI", "UX Design"],
+        "problem": "Briefing was done via Google Forms, generating data inconsistencies and high rework rates for the production team.",
+        "solution": "Creation of a dynamic briefing system using AI for real-time results generation, adapting questions based on client's previous answers.",
+        "impact": [
+          "Better client experience",
+          "Significant reduction in rework",
+          "Greater operational speed"
+        ]
+      },
+      {
+        "key": "qa-system",
+        "title": "Automated QA System",
+        "category": "QA · Process",
+        "summary": "Standardized checklist and automated delivery validation system eliminating subjective evaluations.",
+        "tags": ["QA", "Automation", "Process"],
+        "problem": "Delivery quality evaluation was subjective, with no defined criteria, leading to inconsistencies and difficulty measuring team evolution.",
+        "solution": "Creation of a standardized checklist and automated validation system with objective criteria for each type of delivery.",
+        "impact": [
+          "Quality standardization",
+          "Error reduction",
+          "Greater predictability"
+        ]
+      },
+      {
+        "key": "design-system",
+        "title": "Corporate Design System",
+        "category": "Design System · Front-end",
+        "summary": "Reusable component library that eliminated visual inconsistencies and accelerated deliveries.",
+        "tags": ["Design System", "Vue 3", "LESS", "Figma"],
+        "problem": "Inconsistent layouts fully dependent on manual creation for each new project, with no reuse across deliveries.",
+        "solution": "Creation of a reusable, standardized component library with usage documentation and design process integration.",
+        "impact": [
+          "Delivery scalability",
+          "Higher production speed",
+          "Consistent visual standardization"
+        ]
+      },
+      {
+        "key": "people-management",
+        "title": "Team Management & Development",
+        "category": "Leadership · People",
+        "summary": "Implementation of goals, IDPs, and performance tracking transforming team growth.",
+        "tags": ["Leadership", "IDP", "Management", "Mentoring"],
+        "problem": "Absence of clear professional growth processes, no defined goals or structured monitoring of team members.",
+        "solution": "Implementation of individual goals, IDPs, performance tracking, and technical development with periodic reviews.",
+        "impact": [
+          "Greater team growth",
+          "Higher engagement",
+          "Greater predictability of results"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "Technologies and practices I master",
+    "subtitle": "A solid technical foundation combined with product vision and people leadership.",
+    "categories": [
+      {
+        "key": "frontend",
+        "icon": "code",
+        "label": "Front-end",
+        "items": ["HTML5", "CSS3", "JavaScript", "jQuery", "React", "TypeScript", "Responsive Design"]
+      },
+      {
+        "key": "design",
+        "icon": "design",
+        "label": "Design",
+        "items": ["Figma", "Auto Layout", "UI Design", "UX Design", "Design Systems"]
+      },
+      {
+        "key": "quality",
+        "icon": "shield",
+        "label": "Quality",
+        "items": ["QA", "Code Review", "Process Validation", "Checklist Automation"]
+      },
+      {
+        "key": "leadership",
+        "icon": "people",
+        "label": "Leadership",
+        "items": ["Technical Leadership", "People Management", "Mentoring", "Process Improvement", "Product Vision"]
+      },
+      {
+        "key": "productivity",
+        "icon": "rocket",
+        "label": "Productivity",
+        "items": ["Artificial Intelligence", "Workflow Optimization", "Automation", "Metrics", "Continuous Improvement"]
+      }
+    ]
+  },
+  "resume": {
+    "label": "Resume",
+    "title": "Consolidated experience",
+    "subtitle": "A document summarizing my journey, skills and results.",
+    "download": "Download Resume (PDF)",
+    "downloadLang": "Download in {lang}",
+    "certifications": {
+      "title": "Certifications & Training",
+      "empty": "Certifications will be added soon."
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's talk",
+    "subtitle": "Open to new opportunities in technical leadership, consulting, and collaboration.",
+    "links": [
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "description": "Connect and follow my journey",
+        "url": "https://www.linkedin.com/in/enrico-mendes-vienhage/"
+      },
+      {
+        "id": "github",
+        "label": "GitHub",
+        "description": "See my repositories and contributions",
+        "url": "https://github.com/EnricoMendes55"
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "description": "contatoenricomv@gmail.com",
+        "url": "mailto:contatoenricomv@gmail.com"
+      }
+    ],
+    "openNewTab": "Open in new tab"
+  },
+  "footer": {
+    "made": "Built with",
+    "by": "by Enrico Mendes Vienhage",
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light theme",
+    "dark": "Dark theme"
+  },
+  "language": {
+    "select": "Language",
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content",
+    "menuOpen": "Open navigation menu",
+    "menuClose": "Close navigation menu",
+    "externalLink": "Opens in new tab",
+    "closeModal": "Close modal"
+  }
+}

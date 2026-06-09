@@ -1,0 +1,69 @@
+// ============================================================
+// Site layout shell
+// ============================================================
+.site-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: var(--header-height);
+}
+
+// ============================================================
+// Grid utilities
+// ============================================================
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+
+  .mobile-only({
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  });
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+
+  .tablet({
+    grid-template-columns: repeat(2, 1fr);
+  });
+
+  .mobile-only({
+    grid-template-columns: 1fr;
+  });
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+
+  .desktop({
+    grid-template-columns: repeat(3, 1fr);
+  });
+
+  .tablet({
+    grid-template-columns: repeat(2, 1fr);
+  });
+
+  .mobile-only({
+    grid-template-columns: 1fr;
+  });
+}
+
+// ============================================================
+// Divider
+// ============================================================
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--bg-border);
+  border: none;
+}
