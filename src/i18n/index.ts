@@ -1,26 +1,24 @@
 import { createI18n } from 'vue-i18n'
+import type { Ref } from 'vue'
 import ptBR from './locales/pt-BR.json'
 import en from './locales/en.json'
 import es from './locales/es.json'
 
 export type MessageSchema = typeof ptBR
+export type LocaleCode = 'pt-BR' | 'en' | 'es'
 
-const savedLocale = localStorage.getItem('locale') as string | null
-const browserLocale = navigator.language
-
-function resolveLocale(raw: string | null): string {
-  if (!raw) return 'pt-BR'
-  if (raw.startsWith('pt')) return 'pt-BR'
-  if (raw.startsWith('es')) return 'es'
-  if (raw.startsWith('en')) return 'en'
+function resolveLocale(): LocaleCode {
+  const stored = localStorage.getItem('locale')
+  if (stored === 'pt-BR' || stored === 'en' || stored === 'es') return stored
+  const browser = navigator.language
+  if (browser.startsWith('es')) return 'es'
+  if (browser.startsWith('en')) return 'en'
   return 'pt-BR'
 }
 
-const locale = savedLocale ?? resolveLocale(browserLocale)
-
-export const i18n = createI18n<[MessageSchema], 'pt-BR' | 'en' | 'es'>({
+export const i18n = createI18n({
   legacy: false,
-  locale: locale as 'pt-BR' | 'en' | 'es',
+  locale: resolveLocale(),
   fallbackLocale: 'en',
   messages: {
     'pt-BR': ptBR,
@@ -29,8 +27,8 @@ export const i18n = createI18n<[MessageSchema], 'pt-BR' | 'en' | 'es'>({
   }
 })
 
-export function setLocale(locale: 'pt-BR' | 'en' | 'es') {
-  i18n.global.locale.value = locale
-  localStorage.setItem('locale', locale)
-  document.documentElement.lang = locale === 'pt-BR' ? 'pt-BR' : locale
+export function setLocale(code: LocaleCode) {
+  (i18n.global.locale as Ref<string>).value = code
+  localStorage.setItem('locale', code)
+  document.documentElement.lang = code
 }
