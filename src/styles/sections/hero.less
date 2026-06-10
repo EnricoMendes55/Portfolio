@@ -15,7 +15,7 @@
   });
 
   &__inner {
-    position: relative;
+    position: unset;
     z-index: var(--z-raised);
   }
 
@@ -149,7 +149,7 @@
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
-    opacity: 0.18;
+    opacity: 0.9;
     mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 45%, transparent 72%);
     -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 45%, transparent 72%);
 
@@ -159,6 +159,7 @@
   }
 
   &__grid {
+    display: none;
     position: absolute;
     inset: 0;
     background-image:
@@ -179,7 +180,7 @@
     opacity: 0.6;
 
     [data-theme="dark"] & {
-      opacity: 0.3;
+      opacity: 0.8;
     }
   }
 
