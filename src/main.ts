@@ -6,6 +6,7 @@ import { i18n } from './i18n'
 import '@/styles/global.less'
 import '@/styles/layout.less'
 import '@/styles/components.less'
+import '@/styles/sections/hero.less'
 
 const app = createApp(App)
 app.use(router)
