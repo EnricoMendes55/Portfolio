@@ -73,6 +73,7 @@
 
       <!-- Decorative background grid -->
       <div class="hero-section__bg" aria-hidden="true">
+        <div class="hero-section__photo" :style="{ backgroundImage: `url(${heroBg})` }"></div>
         <div class="hero-section__grid"></div>
         <div class="hero-section__glow"></div>
       </div>
@@ -98,6 +99,7 @@ import { useAnimateOnScroll } from '@/composables/useScrollSpy'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import IconDownload from '@/components/ui/icons/IconDownload.vue'
 import IconArrowDown from '@/components/ui/icons/IconArrowDown.vue'
+import heroBg from '@/assets/hero-bg.webp'
 
 const { t, tm } = useI18n()
 const sectionRef = ref<HTMLElement | null>(null)
@@ -256,6 +258,21 @@ onMounted(() => observe(sectionRef.value))
     z-index: var(--z-below);
     pointer-events: none;
     overflow: hidden;
+  }
+
+  &__photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    opacity: 0.18;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 45%, transparent 72%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 45%, transparent 72%);
+
+    [data-theme="light"] & {
+      opacity: 0.12;
+    }
   }
 
   &__grid {

@@ -15,10 +15,10 @@
     "role": "Supervisor de Desarrollo Front-end",
     "subtitle": "Transformando procesos, productos y equipos a través de la tecnología.",
     "metrics": [
-      { "value": "4+", "label": "años en Front-end" },
-      { "value": "7",  "label": "profesionales liderados" },
-      { "value": "3",  "label": "idiomas" },
-      { "value": "★",  "label": "Especialista en Front-end, QA y Liderazgo Técnico" }
+      { "value": "4+",  "label": "años en Front-end" },
+      { "value": "+10", "label": "profesionales liderados" },
+      { "value": "3",   "label": "idiomas: Portugués, Español e Inglés" },
+      { "value": "★",   "label": "Especialista en Front-end, Web Design, QA y Liderazgo Técnico" }
     ],
     "cta": {
       "resume":   "Descargar CV",
@@ -260,6 +260,12 @@
         "label": "E-mail",
         "description": "contatoenricomv@gmail.com",
         "url": "mailto:contatoenricomv@gmail.com"
+      },
+      {
+        "id": "whatsapp",
+        "label": "WhatsApp",
+        "description": "+55 48 99177-7530",
+        "url": "https://wa.me/5548991777530"
       }
     ],
     "openNewTab": "Abrir en nueva pestaña"

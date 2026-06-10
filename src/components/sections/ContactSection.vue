@@ -15,6 +15,7 @@
           :target="link.url.startsWith('mailto') ? undefined : '_blank'"
           :rel="link.url.startsWith('mailto') ? undefined : 'noopener noreferrer'"
           class="contact-section__link-card animate-in"
+          :class="`contact-section__link-card--${link.id}`"
           :style="{ transitionDelay: `${index * 80}ms` }"
           :aria-label="`${link.label} — ${link.url.startsWith('mailto') ? '' : t('a11y.externalLink')}`"
         >
@@ -42,6 +43,7 @@ import { useAnimateOnScroll } from '@/composables/useScrollSpy'
 import IconLinkedIn from '@/components/ui/icons/contact/IconLinkedIn.vue'
 import IconGitHub from '@/components/ui/icons/contact/IconGitHub.vue'
 import IconEmail from '@/components/ui/icons/contact/IconEmail.vue'
+import IconWhatsApp from '@/components/ui/icons/contact/IconWhatsApp.vue'
 import IconExternalLink from '@/components/ui/icons/IconExternalLink.vue'
 
 const { t, tm } = useI18n()
@@ -53,9 +55,10 @@ const contactLinks = computed(() => tm('contact.links') as Array<{
 }>)
 
 const contactIconMap: Record<string, Component> = {
-  linkedin: IconLinkedIn,
-  github: IconGitHub,
-  email: IconEmail
+  linkedin:  IconLinkedIn,
+  github:    IconGitHub,
+  email:     IconEmail,
+  whatsapp:  IconWhatsApp
 }
 
 onMounted(() => observe(sectionRef.value))
@@ -65,12 +68,12 @@ onMounted(() => observe(sectionRef.value))
 .contact-section {
   &__links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-6);
-    max-width: 860px;
+    max-width: 900px;
     margin-inline: auto;
 
-    .tablet({
+    .mobile-only({
       grid-template-columns: 1fr;
       max-width: 480px;
     });
@@ -85,13 +88,29 @@ onMounted(() => observe(sectionRef.value))
     gap: var(--space-5);
     position: relative;
 
-    .tablet({
-      flex-direction: row;
-      align-items: center;
-    });
+    &:hover {
+      text-decoration: none;
 
-    &:hover .contact-section__link-arrow {
-      transform: translate(2px, -2px);
+      .contact-section__link-arrow {
+        transform: translate(2px, -2px);
+        color: var(--accent-default);
+      }
+
+      .contact-section__link-label {
+        color: var(--text-primary);
+      }
+    }
+
+    // WhatsApp — destaque verde
+    &--whatsapp {
+      .contact-section__link-icon {
+        background: rgb(37 211 102 / 0.12);
+        color: #25d366;
+      }
+
+      &:hover {
+        border-color: rgb(37 211 102 / 0.4);
+      }
     }
   }
 
@@ -119,6 +138,7 @@ onMounted(() => observe(sectionRef.value))
     font-weight: var(--font-semibold);
     color: var(--text-primary);
     margin-bottom: var(--space-1);
+    transition: color var(--transition-fast);
   }
 
   &__link-desc {
@@ -131,14 +151,6 @@ onMounted(() => observe(sectionRef.value))
     transition: transform var(--transition-fast), color var(--transition-fast);
     align-self: flex-start;
     margin-left: auto;
-
-    .tablet({
-      align-self: center;
-    });
-
-    .contact-section__link-card:hover & {
-      color: var(--accent-default);
-    }
   }
 }
 </style>

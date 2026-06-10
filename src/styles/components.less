@@ -23,9 +23,12 @@
     color: var(--text-on-accent);
     border: 1px solid transparent;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: var(--accent-hover);
+      color: var(--text-on-accent);
       box-shadow: 0 0 0 3px var(--accent-subtle);
+      text-decoration: none;
     }
   }
 
@@ -34,9 +37,12 @@
     color: var(--text-primary);
     border: 1px solid var(--bg-border-strong);
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: var(--bg-surface-raised);
+      color: var(--text-primary);
       border-color: var(--text-tertiary);
+      text-decoration: none;
     }
   }
 
@@ -45,9 +51,11 @@
     color: var(--text-secondary);
     border: 1px solid transparent;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: var(--bg-surface-raised);
       color: var(--text-primary);
+      text-decoration: none;
     }
   }
 
@@ -58,10 +66,12 @@
     color: var(--text-secondary);
     border: 1px solid transparent;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: var(--bg-surface-raised);
       color: var(--text-primary);
       border-color: var(--bg-border);
+      text-decoration: none;
     }
   }
 }
