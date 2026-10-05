@@ -223,14 +223,10 @@ onUnmounted(() => {
     display: grid;
     grid-template-columns: 5fr 7fr; // default: info 42% | visual 58%
     gap: var(--space-16);
-    align-items: center;
-    padding-block: var(--space-20);
+    align-items: start;
+    padding-top: var(--space-12);
+    padding-bottom: clamp(5rem, 8vw, 8.75rem);
     position: relative;
-
-    // Thin chapter divider between projects
-    & + & {
-      border-top: 1px solid var(--bg-border);
-    }
 
     // Composition 02 — BI Dashboard: visual left, info right
     &--bi-dashboard {
@@ -243,7 +239,6 @@ onUnmounted(() => {
     // Composition 03 — Clínica Balvedi: stacked (info above, visual full-width)
     &--clinica-balvedi {
       grid-template-columns: 1fr;
-      align-items: start;
       gap: var(--space-10);
 
       .work-section__project-info {
@@ -255,7 +250,8 @@ onUnmounted(() => {
     .tablet({
       grid-template-columns: 1fr !important;
       gap: var(--space-10);
-      padding-block: var(--space-14);
+      padding-top: var(--space-10);
+      padding-bottom: clamp(3rem, 6vw, 5rem);
       align-items: start;
 
       .work-section__project-visual { order: 1; }
@@ -264,7 +260,8 @@ onUnmounted(() => {
 
     .mobile-only({
       gap: var(--space-8);
-      padding-block: var(--space-12);
+      padding-top: var(--space-8);
+      padding-bottom: clamp(2.5rem, 5vw, 4rem);
     });
   }
 
