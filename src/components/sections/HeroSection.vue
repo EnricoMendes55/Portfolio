@@ -25,7 +25,8 @@
             :key="signal.value"
             class="hero-section__trust-item"
           >
-            <strong>{{ signal.value }}</strong>&nbsp;{{ signal.label }}
+            <strong>{{ signal.value }}</strong>
+            <span class="hero-section__trust-label">{{ signal.label }}</span>
           </span>
         </div>
 
