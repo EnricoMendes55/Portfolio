@@ -1,98 +1,92 @@
 <template>
   <section id="work" class="work-section section" ref="sectionRef">
     <div class="container">
+
       <div class="section__header">
         <p class="section__label">{{ t('work.label') }}</p>
         <h2 class="section__title animate-in">{{ t('work.title') }}</h2>
         <p class="section__subtitle animate-in delay-1">{{ t('work.subtitle') }}</p>
       </div>
 
-      <div class="work-section__list">
+      <div class="work-section__projects">
         <article
           v-for="(item, index) in workItems"
           :key="item.key"
-          class="work-section__case animate-in"
-          :class="[
-            `work-section__case--${item.key}`,
-            { 'work-section__case--featured': item.featured }
-          ]"
-          :style="{ transitionDelay: `${index * 120}ms` }"
+          class="work-section__project animate-in"
+          :class="`work-section__project--${item.key}`"
+          :style="{ transitionDelay: `${index * 100}ms` }"
         >
-          <!-- Content -->
-          <div class="work-section__case-body">
-            <div class="work-section__case-meta">
-              <span class="work-section__case-num">0{{ index + 1 }}</span>
-              <span class="work-section__case-cat">{{ item.category }}</span>
+          <!-- Info column -->
+          <div class="work-section__project-info">
+            <div class="work-section__project-meta">
+              <span class="work-section__project-num">0{{ index + 1 }}</span>
+              <span class="work-section__project-cat">{{ item.category }}</span>
             </div>
 
-            <h3 class="work-section__case-title">{{ item.title }}</h3>
-            <p class="work-section__case-summary">{{ item.summary }}</p>
+            <h3 class="work-section__project-title">{{ item.title }}</h3>
+            <p class="work-section__project-summary">{{ item.summary }}</p>
 
-            <!-- Stats grid (AI Briefing) -->
-            <div
-              v-if="item.highlights?.length"
-              class="work-section__case-stats"
-            >
+            <!-- Stats grid — AI Briefing only, typographic, no background -->
+            <div v-if="item.highlights?.length" class="work-section__project-stats">
               <div
                 v-for="h in item.highlights"
                 :key="h.label"
-                class="work-section__case-stat"
+                class="work-section__project-stat"
               >
                 <strong>{{ h.value }}</strong>
                 <span>{{ h.label }}</span>
               </div>
             </div>
 
-            <!-- Callout (BI Dashboard) -->
-            <p v-if="item.callout" class="work-section__case-callout">
+            <!-- Callout — BI Dashboard -->
+            <p v-if="item.callout" class="work-section__project-callout">
               {{ item.callout }}
             </p>
 
-            <!-- Stack -->
-            <p class="work-section__case-stack">
+            <p class="work-section__project-stack">
               {{ item.tags.slice(0, 5).join(' · ') }}
             </p>
 
-            <!-- CTA -->
-            <button
-              class="work-section__case-cta"
-              @click="openCase(item)"
-            >
-              {{ t('work.seeCase') }} <span aria-hidden="true">→</span>
+            <button class="work-section__project-cta" @click="openCase(item)">
+              {{ t('work.seeCase') }} →
             </button>
           </div>
 
-          <!-- Media -->
+          <!-- Visual column — browser mockup, ready for screenshots -->
           <div
-            class="work-section__case-media"
+            class="work-section__project-visual"
             @click="openCase(item)"
             role="button"
             tabindex="0"
             :aria-label="`${t('work.seeCase')}: ${item.title}`"
             @keydown.enter="openCase(item)"
           >
-            <div
-              class="work-section__case-bg"
-              :class="`work-section__thumb--${item.key}`"
-            >
-              <img
-                v-if="item.image"
-                :src="item.image"
-                :alt="item.title"
-                class="work-section__case-img"
-              />
-            </div>
-            <div class="work-section__case-overlay">
-              <span class="work-section__case-overlay-label">
-                {{ t('work.seeCase') }} →
-              </span>
+            <div class="work-section__browser">
+              <div class="work-section__browser-chrome">
+                <div class="work-section__browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="work-section__browser-url"></div>
+              </div>
+              <div
+                class="work-section__browser-screen"
+                :class="`work-section__screen--${item.key}`"
+              >
+                <img
+                  v-if="item.image"
+                  :src="item.image"
+                  :alt="item.title"
+                  class="work-section__project-img"
+                />
+              </div>
             </div>
           </div>
         </article>
       </div>
+
     </div>
 
-    <!-- Case Modal -->
+    <!-- Case modal — full detail -->
     <Transition name="modal">
       <div
         v-if="activeCase"
@@ -114,13 +108,13 @@
           <div class="work-section__modal-body">
             <div
               class="work-section__modal-thumb"
-              :class="`work-section__thumb--${activeCase.key}`"
+              :class="`work-section__screen--${activeCase.key}`"
             >
               <img
                 v-if="activeCase.image"
                 :src="activeCase.image"
                 :alt="activeCase.title"
-                class="work-section__case-img"
+                class="work-section__project-img"
               />
               <div v-else class="work-section__placeholder">
                 <span class="work-section__placeholder-text">{{ activeCase.category }}</span>
@@ -128,7 +122,7 @@
             </div>
 
             <div class="work-section__modal-content">
-              <span class="work-section__cat-label">{{ activeCase.category }}</span>
+              <span class="work-section__modal-cat">{{ activeCase.category }}</span>
               <h2 class="work-section__modal-title">{{ activeCase.title }}</h2>
 
               <div class="work-section__modal-section">
@@ -182,9 +176,9 @@ import IconClose from '@/components/ui/icons/IconClose.vue'
 import type { WorkItem } from '@/types'
 
 const { t, tm } = useI18n()
-const sectionRef = ref<HTMLElement | null>(null)
-const modalRef = ref<HTMLElement | null>(null)
-const activeCase = ref<WorkItem | null>(null)
+const sectionRef  = ref<HTMLElement | null>(null)
+const modalRef    = ref<HTMLElement | null>(null)
+const activeCase  = ref<WorkItem | null>(null)
 const { observe } = useAnimateOnScroll()
 
 const workItems = computed(() => tm('work.items') as WorkItem[])
@@ -217,95 +211,129 @@ onUnmounted(() => {
 <style lang="less">
 .work-section {
 
-  // ----------------------------------------------------------------
-  // Case list
-  // ----------------------------------------------------------------
+  // ─────────────────────────────────────────────────────────────
+  // Projects list — no card container, editorial composition
+  // ─────────────────────────────────────────────────────────────
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
+  &__projects {
     margin-top: var(--space-16);
   }
 
-  // ----------------------------------------------------------------
-  // Individual case — default layout (content left, media right)
-  // ----------------------------------------------------------------
-
-  &__case {
+  &__project {
     display: grid;
-    grid-template-columns: 2fr 3fr;
-    min-height: 540px;
-    border-radius: var(--radius-2xl);
-    overflow: hidden;
-    background: var(--bg-surface);
-    border: 1px solid var(--bg-border);
-    transition: box-shadow var(--transition-normal);
+    grid-template-columns: 5fr 7fr; // default: info 42% | visual 58%
+    gap: var(--space-16);
+    align-items: center;
+    padding-block: var(--space-20);
+    position: relative;
 
-    &:hover {
-      box-shadow: 0 8px 40px rgb(0 0 0 / 0.18);
+    // Thin chapter divider between projects
+    & + & {
+      border-top: 1px solid var(--bg-border);
     }
 
-    // BI Dashboard — media on left
+    // Composition 02 — BI Dashboard: visual left, info right
     &--bi-dashboard {
-      grid-template-columns: 3fr 2fr;
+      grid-template-columns: 7fr 5fr;
 
-      .work-section__case-media {
-        order: -1;
+      .work-section__project-info   { order: 2; }
+      .work-section__project-visual { order: 1; }
+    }
+
+    // Composition 03 — Clínica Balvedi: stacked (info above, visual full-width)
+    &--clinica-balvedi {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: var(--space-10);
+
+      .work-section__project-info {
+        max-width: 600px;
       }
     }
 
-    // Clínica Balvedi — balanced halves, slightly shorter
-    &--clinica-balvedi {
-      grid-template-columns: 1fr 1fr;
-      min-height: 480px;
-    }
-
+    // Tablet: single column, visual always first
     .tablet({
       grid-template-columns: 1fr !important;
-      min-height: auto;
+      gap: var(--space-10);
+      padding-block: var(--space-14);
+      align-items: start;
 
-      &--bi-dashboard .work-section__case-media {
-        order: 0;
-      }
-    });
-  }
-
-  // ----------------------------------------------------------------
-  // Case body (text side)
-  // ----------------------------------------------------------------
-
-  &__case-body {
-    padding: var(--space-10) var(--space-10);
-    display: flex;
-    flex-direction: column;
-
-    .tablet({
-      padding: var(--space-8) var(--space-6);
-      order: 2;
+      .work-section__project-visual { order: 1; }
+      .work-section__project-info   { order: 2; }
     });
 
     .mobile-only({
-      padding: var(--space-6);
+      gap: var(--space-8);
+      padding-block: var(--space-12);
     });
   }
 
-  &__case-meta {
+  // Per-project atmosphere — very subtle, background only
+  &__project--ai-briefing {
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 72% 50%, rgba(90, 72, 168, 0.055) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  &__project--bi-dashboard {
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 28% 50%, rgba(10, 130, 100, 0.055) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  &__project--clinica-balvedi {
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 80%, rgba(24, 80, 160, 0.055) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  // Keep content above pseudo-element
+  &__project-info,
+  &__project-visual {
+    position: relative;
+    z-index: 1;
+  }
+
+  // ─────────────────────────────────────────────────────────────
+  // Info block
+  // ─────────────────────────────────────────────────────────────
+
+  &__project-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__project-meta {
     display: flex;
     align-items: center;
     gap: var(--space-3);
     margin-bottom: var(--space-5);
   }
 
-  &__case-num {
+  &__project-num {
     font-size: var(--text-xs);
     font-weight: var(--font-semibold);
     color: var(--text-tertiary);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     font-variant-numeric: tabular-nums;
   }
 
-  &__case-cat {
+  &__project-cat {
     font-size: var(--text-xs);
     font-weight: var(--font-semibold);
     color: var(--accent-default);
@@ -313,7 +341,7 @@ onUnmounted(() => {
     text-transform: uppercase;
   }
 
-  &__case-title {
+  &__project-title {
     font-size: var(--text-2xl);
     font-weight: var(--font-bold);
     color: var(--text-primary);
@@ -321,49 +349,48 @@ onUnmounted(() => {
     letter-spacing: -0.02em;
     margin-bottom: var(--space-4);
 
-    .work-section__case--featured & {
+    // Featured case gets larger title
+    .work-section__project--ai-briefing & {
       font-size: var(--text-3xl);
-
-      .tablet({
-        font-size: var(--text-2xl);
-      });
     }
 
     .tablet({
-      font-size: var(--text-xl);
+      font-size: var(--text-xl) !important;
     });
   }
 
-  &__case-summary {
+  &__project-summary {
     font-size: var(--text-sm);
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
-    max-width: 400px;
+    max-width: 380px;
     margin-bottom: var(--space-6);
+
+    .work-section__project--clinica-balvedi & {
+      max-width: 500px;
+    }
   }
 
-  // Stats grid (AI Briefing hero case)
-  &__case-stats {
+  // Stats — purely typographic, zero background
+  &__project-stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-3);
-    padding: var(--space-5);
-    background: var(--bg-surface-raised);
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--space-6);
+    grid-template-columns: repeat(2, max-content);
+    column-gap: var(--space-10);
+    row-gap: var(--space-6);
+    margin-bottom: var(--space-8);
   }
 
-  &__case-stat {
+  &__project-stat {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
 
     strong {
-      font-size: var(--text-xl);
-      font-weight: var(--font-bold);
+      font-size: var(--text-3xl);
+      font-weight: var(--font-extrabold);
       color: var(--text-primary);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
+      line-height: 1;
+      letter-spacing: -0.03em;
     }
 
     span {
@@ -373,33 +400,30 @@ onUnmounted(() => {
     }
   }
 
-  // Callout (BI Dashboard)
-  &__case-callout {
+  // Callout — BI Dashboard technical highlight
+  &__project-callout {
     font-size: var(--text-sm);
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
-    padding: var(--space-3) var(--space-4);
+    padding-left: var(--space-4);
     border-left: 2px solid var(--accent-default);
-    background: var(--bg-surface-raised);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    margin-bottom: var(--space-6);
     font-style: italic;
+    margin-bottom: var(--space-6);
   }
 
-  // Stack text line
-  &__case-stack {
+  // Stack line
+  &__project-stack {
     font-size: var(--text-xs);
     color: var(--text-tertiary);
     letter-spacing: 0.04em;
-    line-height: 1.5;
-    margin-top: auto;
+    line-height: 1.6;
     padding-top: var(--space-5);
     border-top: 1px solid var(--bg-border);
     margin-bottom: var(--space-5);
   }
 
-  // Case CTA
-  &__case-cta {
+  // CTA — minimal pill button
+  &__project-cta {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
@@ -408,102 +432,122 @@ onUnmounted(() => {
     color: var(--text-primary);
     background: transparent;
     border: 1px solid var(--bg-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-full);
     padding: var(--space-2) var(--space-5);
     cursor: pointer;
-    transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+    transition: background var(--transition-fast), border-color var(--transition-fast);
     width: fit-content;
 
     &:hover {
       background: var(--bg-surface-raised);
-      border-color: var(--text-tertiary);
+      border-color: var(--text-secondary);
     }
   }
 
-  // ----------------------------------------------------------------
-  // Case media (image / gradient side)
-  // ----------------------------------------------------------------
+  // ─────────────────────────────────────────────────────────────
+  // Visual block — browser mockup
+  // ─────────────────────────────────────────────────────────────
 
-  &__case-media {
-    position: relative;
-    overflow: hidden;
+  &__project-visual {
     cursor: pointer;
 
-    &:hover .work-section__case-bg {
-      transform: scale(1.04);
+    &:hover .work-section__browser {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 64px rgb(0 0 0 / 0.38), 0 0 0 1px rgba(255, 255, 255, 0.07);
     }
 
-    &:hover .work-section__case-overlay {
-      opacity: 1;
+    [data-theme="light"] &:hover .work-section__browser {
+      box-shadow: 0 24px 64px rgb(0 0 0 / 0.12), 0 0 0 1px rgba(0,0,0,0.06);
     }
-
-    .tablet({
-      aspect-ratio: 16 / 9;
-      order: 1;
-    });
   }
 
-  &__case-bg {
-    position: absolute;
-    inset: -2px;
-    transition: transform 0.6s ease;
+  // Browser frame — minimal, not a card
+  &__browser {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    overflow: hidden;
+    box-shadow: 0 8px 36px rgb(0 0 0 / 0.28), 0 0 0 1px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    [data-theme="light"] & {
+      border-color: var(--bg-border);
+      box-shadow: 0 8px 36px rgb(0 0 0 / 0.08);
+    }
   }
 
-  &__case-img {
+  &__browser-chrome {
+    height: 36px;
+    background: var(--bg-surface-raised);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-4);
+    gap: var(--space-3);
+    flex-shrink: 0;
+
+    [data-theme="light"] & {
+      border-bottom-color: var(--bg-border);
+    }
+  }
+
+  &__browser-dots {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+
+    span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+
+      &:nth-child(1) { background: #ff5f56; }
+      &:nth-child(2) { background: #ffbd2e; }
+      &:nth-child(3) { background: #27c93f; }
+    }
+  }
+
+  &__browser-url {
+    flex: 1;
+    max-width: 220px;
+    height: 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+
+    [data-theme="light"] & {
+      background: var(--bg-surface);
+      border: 1px solid var(--bg-border);
+    }
+  }
+
+  // Screen area — ready for screenshots
+  &__browser-screen {
+    aspect-ratio: 16 / 10;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__screen--ai-briefing {
+    background: linear-gradient(155deg, #120f28 0%, #221855 45%, #312570 100%);
+  }
+
+  &__screen--bi-dashboard {
+    background: linear-gradient(155deg, #07171f 0%, #0b3240 45%, #0c5445 100%);
+  }
+
+  &__screen--clinica-balvedi {
+    background: linear-gradient(155deg, #0d1c2c 0%, #12304e 45%, #174e78 100%);
+  }
+
+  &__project-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
 
-  &__case-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgb(0 0 0 / 0.42);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--transition-fast);
-    backdrop-filter: blur(3px);
-  }
-
-  &__case-overlay-label {
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
-    color: #fff;
-    letter-spacing: 0.06em;
-    padding: var(--space-3) var(--space-5);
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: var(--radius-full);
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(4px);
-  }
-
-  // ----------------------------------------------------------------
-  // Gradient backgrounds (card + modal)
-  // ----------------------------------------------------------------
-
-  &__thumb--ai-briefing {
-    background: linear-gradient(145deg, #0f0c29 0%, #2d2060 40%, #4a3f8a 75%, #6b5fb0 100%);
-    width: 100%;
-    height: 100%;
-  }
-
-  &__thumb--bi-dashboard {
-    background: linear-gradient(145deg, #071a24 0%, #0a3545 40%, #0d6b55 75%, #0a9e78 100%);
-    width: 100%;
-    height: 100%;
-  }
-
-  &__thumb--clinica-balvedi {
-    background: linear-gradient(145deg, #0c1e2e 0%, #0e3354 40%, #1a5a8a 75%, #2282c0 100%);
-    width: 100%;
-    height: 100%;
-  }
-
-  // ----------------------------------------------------------------
+  // ─────────────────────────────────────────────────────────────
   // Modal
-  // ----------------------------------------------------------------
+  // ─────────────────────────────────────────────────────────────
 
   &__modal-backdrop {
     position: fixed;
@@ -562,7 +606,7 @@ onUnmounted(() => {
     });
   }
 
-  &__cat-label {
+  &__modal-cat {
     display: inline-block;
     font-size: var(--text-xs);
     font-weight: var(--font-semibold);
@@ -610,25 +654,22 @@ onUnmounted(() => {
   }
 
   &__placeholder {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    inset: 0;
   }
 
   &__placeholder-text {
     font-size: var(--text-xs);
     font-weight: var(--font-semibold);
-    color: rgb(255 255 255 / 0.35);
+    color: rgb(255 255 255 / 0.28);
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 }
 
-// Modal transition
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity var(--transition-normal);
