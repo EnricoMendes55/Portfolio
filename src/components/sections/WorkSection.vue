@@ -52,7 +52,7 @@
             </button>
           </div>
 
-          <!-- Visual column — browser mockup, ready for screenshots -->
+          <!-- Visual column — browser mockup (apps) or website showcase -->
           <div
             class="work-section__project-visual"
             @click="openCase(item)"
@@ -61,25 +61,48 @@
             :aria-label="`${t('work.seeCase')}: ${item.title}`"
             @keydown.enter="openCase(item)"
           >
-            <div class="work-section__browser">
-              <div class="work-section__browser-chrome">
-                <div class="work-section__browser-dots">
-                  <span></span><span></span><span></span>
+            <!-- Website showcase: desktop + mobile frame overlay (Clínica Balvedi) -->
+            <template v-if="item.key === 'clinica-balvedi'">
+              <div class="work-section__showcase">
+                <div class="work-section__browser">
+                  <div class="work-section__browser-chrome">
+                    <div class="work-section__browser-dots">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <div class="work-section__browser-url"></div>
+                  </div>
+                  <div class="work-section__browser-screen work-section__screen--clinica-balvedi">
+                    <img v-if="item.image" :src="item.image" :alt="item.title" class="work-section__project-img" />
+                  </div>
                 </div>
-                <div class="work-section__browser-url"></div>
+                <div class="work-section__showcase-mobile">
+                  <div class="work-section__screen--clinica-balvedi"></div>
+                </div>
               </div>
-              <div
-                class="work-section__browser-screen"
-                :class="`work-section__screen--${item.key}`"
-              >
-                <img
-                  v-if="item.image"
-                  :src="item.image"
-                  :alt="item.title"
-                  class="work-section__project-img"
-                />
+            </template>
+
+            <!-- Standard browser mockup for web apps -->
+            <template v-else>
+              <div class="work-section__browser">
+                <div class="work-section__browser-chrome">
+                  <div class="work-section__browser-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="work-section__browser-url"></div>
+                </div>
+                <div
+                  class="work-section__browser-screen"
+                  :class="`work-section__screen--${item.key}`"
+                >
+                  <img
+                    v-if="item.image"
+                    :src="item.image"
+                    :alt="item.title"
+                    class="work-section__project-img"
+                  />
+                </div>
               </div>
-            </div>
+            </template>
           </div>
         </article>
       </div>
@@ -221,48 +244,37 @@ onUnmounted(() => {
 
   &__project {
     display: grid;
-    grid-template-columns: 5fr 7fr; // default: info 42% | visual 58%
-    gap: var(--space-16);
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
     align-items: start;
-    padding-top: var(--space-12);
-    padding-bottom: clamp(5rem, 8vw, 8.75rem);
+    padding-top: var(--space-8);
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
     position: relative;
 
-    // Composition 02 — BI Dashboard: visual left, info right
-    &--bi-dashboard {
-      grid-template-columns: 7fr 5fr;
-
-      .work-section__project-info   { order: 2; }
-      .work-section__project-visual { order: 1; }
-    }
-
-    // Composition 03 — Clínica Balvedi: stacked (info above, visual full-width)
-    &--clinica-balvedi {
-      grid-template-columns: 1fr;
-      gap: var(--space-10);
-
-      .work-section__project-info {
-        max-width: 600px;
-      }
-    }
-
-    // Tablet: single column, visual always first
+    // Tablet: more breathing room, still single column
     .tablet({
-      grid-template-columns: 1fr !important;
       gap: var(--space-10);
       padding-top: var(--space-10);
       padding-bottom: clamp(3rem, 6vw, 5rem);
-      align-items: start;
-
-      .work-section__project-visual { order: 1; }
-      .work-section__project-info   { order: 2; }
     });
 
-    .mobile-only({
-      gap: var(--space-8);
-      padding-top: var(--space-8);
-      padding-bottom: clamp(2.5rem, 5vw, 4rem);
+    // Desktop: side-by-side — info 40% | visual 60%
+    .desktop({
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: var(--space-16);
+      align-items: center;
+      padding-top: var(--space-12);
+      padding-bottom: clamp(5rem, 8vw, 8.75rem);
     });
+
+    // Composition 02 — BI Dashboard: visual left 60% | info right 40%
+    &--bi-dashboard {
+      .desktop({
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+        & .work-section__project-info   { order: 2; }
+        & .work-section__project-visual { order: 1; }
+      });
+    }
   }
 
   // Per-project atmosphere — very subtle, background only
@@ -363,9 +375,6 @@ onUnmounted(() => {
     max-width: 380px;
     margin-bottom: var(--space-6);
 
-    .work-section__project--clinica-balvedi & {
-      max-width: 500px;
-    }
   }
 
   // Stats — purely typographic, zero background
@@ -540,6 +549,45 @@ onUnmounted(() => {
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  // ─────────────────────────────────────────────────────────────
+  // Website showcase — Clínica Balvedi
+  // Desktop browser frame + mobile frame overlay
+  // ─────────────────────────────────────────────────────────────
+
+  &__showcase {
+    position: relative;
+    padding-bottom: var(--space-10);
+
+    .mobile-only({
+      padding-bottom: var(--space-6);
+    });
+  }
+
+  &__showcase-mobile {
+    position: absolute;
+    bottom: 0;
+    right: -12px;
+    width: 26%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.32);
+
+    > div {
+      aspect-ratio: 9 / 16;
+      background: linear-gradient(175deg, #0d1c2c 0%, #12304e 50%, #174e78 100%);
+    }
+
+    [data-theme="light"] & {
+      border-color: var(--bg-border);
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.08);
+
+      > div {
+        background: linear-gradient(175deg, #dce8f5 0%, #bdd4ec 50%, #a0c0e0 100%);
+      }
+    }
   }
 
   // ─────────────────────────────────────────────────────────────
