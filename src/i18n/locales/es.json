@@ -8,12 +8,12 @@
   },
   "hero": {
     "name":     "Enrico Mendes Vienhage",
-    "role":     "Desarrollador Front-end & Diseñador Web/UI",
-    "headline": "Más de 4 años construyendo sitios web, interfaces y soluciones web para clientes reales — actualmente también liderando un equipo de Desarrollo Front-end.",
+    "role":        "Desarrollador Front-end & Diseñador Web/UI",
+    "headline":    "Diseño y Front-end, del layout al código.",
+    "description": "Más de 4 años construyendo sitios web e interfaces para clientes reales. Actualmente, también lidero un equipo de Desarrollo Front-end.",
     "trust": [
       { "value": "400+", "label": "Sitios Web Entregados" },
-      { "value": "4+",   "label": "Años de Experiencia" },
-      { "value": "3+",   "label": "Apps en Producción" }
+      { "value": "4+",   "label": "Años de Experiencia" }
     ],
     "cta": {
       "primary":   "Ver mis proyectos",

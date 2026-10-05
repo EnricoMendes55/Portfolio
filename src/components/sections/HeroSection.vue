@@ -18,8 +18,13 @@
           {{ t('hero.headline') }}
         </h1>
 
+        <!-- Description -->
+        <p class="hero-section__description animate-in delay-3">
+          {{ t('hero.description') }}
+        </p>
+
         <!-- Trust signals -->
-        <div class="hero-section__trust animate-in delay-3">
+        <div class="hero-section__trust animate-in delay-4">
           <span
             v-for="signal in trustSignals"
             :key="signal.value"
@@ -31,7 +36,7 @@
         </div>
 
         <!-- CTAs -->
-        <div class="hero-section__cta animate-in delay-4">
+        <div class="hero-section__cta animate-in delay-5">
           <BaseButton
             variant="primary"
             size="lg"
