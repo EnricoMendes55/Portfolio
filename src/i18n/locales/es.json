@@ -1,177 +1,146 @@
 {
   "nav": {
-    "work":     "Trabajos",
-    "process":  "Proceso",
-    "services": "Servicios",
-    "about":    "Sobre mí",
-    "contact":  "Contacto",
-    "hireMe":   "Hablemos"
+    "work":    "Proyectos",
+    "skills":  "Habilidades",
+    "about":   "Sobre mí",
+    "contact": "Contacto",
+    "hireMe":  "Hablemos"
   },
   "hero": {
     "name":     "Enrico Mendes Vienhage",
-    "headline": "Diseño y desarrollo sitios web de los que las personas se enorgullecen.",
-    "role":     "Diseño Web · Landing Pages · Desarrollo Front-end",
+    "headline": "Diseño y desarrollo experiencias digitales — desde sitios web pixel-perfect hasta aplicaciones full-stack.",
+    "role":     "Desarrollador Front-end · Diseñador Web/UI · Líder de Front-end",
     "trust": [
-      { "value": "400+", "label": "Sitios entregados" },
-      { "value": "4+",   "label": "Años de experiencia" },
-      { "value": "3",    "label": "Idiomas" }
+      { "value": "400+", "label": "Proyectos Entregados" },
+      { "value": "4+",   "label": "Años de Experiencia" },
+      { "value": "3+",   "label": "Apps en Producción" }
     ],
     "cta": {
-      "primary":   "Ver mis trabajos",
-      "secondary": "Hablemos"
+      "primary":   "Ver mis proyectos",
+      "secondary": "Contactarme"
     },
     "scroll": "Desplázate para explorar"
   },
   "work": {
-    "label":     "Trabajos",
-    "title":     "Proyectos seleccionados",
-    "subtitle":  "Una selección de sitios web, landing pages e interfaces que he diseñado y desarrollado.",
+    "label":     "Proyectos",
+    "title":     "Proyectos destacados",
+    "subtitle":  "Problemas reales. Soluciones reales. Una mezcla de craft de diseño web e ingeniería moderna.",
     "seeCase":   "Ver caso",
     "close":     "Cerrar",
-    "challenge": "Desafío",
-    "solution":  "Solución",
-    "result":    "Resultado",
-    "stack":     "Stack",
+    "challenge": "El Desafío",
+    "solution":  "Lo Que Construí",
+    "result":    "El Resultado",
+    "stack":     "Stack Tecnológico",
     "viewLive":  "Ver en vivo",
     "items": [
       {
-        "key":       "saas-landing",
-        "title":     "Landing Page SaaS",
-        "category":  "Landing Page",
+        "key":       "ai-briefing",
+        "title":     "Plataforma de Briefing con IA",
+        "category":  "Aplicación Web",
         "image":     "",
-        "summary":   "Landing page de alta conversión centrada en una propuesta de valor clara y flujo sin fricción.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "Un producto sólido con bajas tasas de conversión por una landing page desordenada y sin foco.",
-        "solution":  "Rediseño completo de la jerarquía para guiar al visitante del problema a la solución en 3 scrolls — CTA arriba del pliegue, prueba social y tabla de precios limpia.",
-        "result":    "Mejora significativa en la tasa de conversión y duración promedio de sesión.",
+        "summary":   "Una plataforma de 16.000 líneas y 11 pasos que transforma el proceso de briefing de agencias — desde el intake del cliente hasta specs listos para Figma, impulsada por IA y automatización.",
+        "tags":      ["Next.js", "React", "TypeScript", "Google Gemini", "Figma API", "Puppeteer", "MariaDB", "JWT"],
+        "challenge": "El proceso de briefing para diseño web en la agencia era completamente manual — los diseñadores pasaban horas recopilando información del cliente, extrayendo identidad visual y escribiendo specs desde cero. El proceso era lento, inconsistente y difícil de escalar.",
+        "solution":  "Construí un sistema guiado completo de 11 pasos con 243 plantillas visuales y 26 categorías de componentes (~16.000 líneas de código). El sistema analiza automáticamente el sitio web actual del cliente con Puppeteer, extrae identidad visual y usa Google Gemini para generar e interpretar contenido. Al finalizar, genera un PDF estructurado, un dataset sincronizado con Bitrix24, un JSON de componentes para Figma y un preview navegable del nuevo sitio. Principio: determinismo donde importa, IA donde agrega valor. Rol: desarrollador único — de la arquitectura al deploy.",
+        "result":    "Tiempo de briefing reducido de horas a minutos. Cada proyecto ahora comienza con un brief estructurado y listo para diseño. Figma recibe el mapa exacto de componentes — sin brechas de interpretación entre cliente y diseñador.",
         "liveUrl":   ""
       },
       {
-        "key":       "corporate-website",
-        "title":     "Rediseño de Sitio Corporativo",
-        "category":  "Website",
+        "key":       "bi-dashboard",
+        "title":     "Dashboard de BI y Gestión Front-end",
+        "category":  "Herramienta Interna",
         "image":     "",
-        "summary":   "Rediseño completo modernizando la identidad visual y mejorando la experiencia del usuario.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "Diseño desactualizado, alta tasa de rebote y sin optimización móvil.",
-        "solution":  "Rediseño visual completo con sistema de diseño moderno, desarrollo mobile-first y reestructuración de contenido para generar contactos.",
-        "result":    "Reducción en la tasa de rebote y aumento en el tiempo de permanencia.",
+        "summary":   "Un dashboard operacional full-stack que transformó la gestión por intuición en toma de decisiones basada en datos — construido por mí de principio a fin.",
+        "tags":      ["Nuxt 3", "Vue 3", "Tailwind CSS", "MySQL/MariaDB", "Bitrix24 API", "JWT", "PM2"],
+        "challenge": "Gestionar un equipo de 10+ desarrolladores front-end sin visibilidad en tiempo real sobre entregas, rendimiento individual, calidad de QA o cuellos de botella. Los reportes eran manuales y las decisiones basadas en intuición.",
+        "solution":  "Diseñé y construí un dashboard de gestión completo que extrae datos en tiempo real de Bitrix24, una API interna personalizada y una base MySQL. Realiza seguimiento de: entregas, tareas, plazos, puntuaciones de QA, tiempo de desarrollo, historial de revisiones, asistencia, metas, rankings e informes individuales. Todos los gráficos construidos manualmente con SVG y CSS — sin frameworks de gráficos. Propiedad total del stack: diseño, front-end, back-end y DevOps.",
+        "result":    "El equipo ahora tiene visibilidad operacional completa. Las evaluaciones de rendimiento son objetivas y basadas en datos. Los cuellos de botella se identifican y resuelven antes de escalar. Las decisiones de liderazgo están respaldadas por números reales.",
         "liveUrl":   ""
       },
       {
-        "key":       "event-landing",
-        "title":     "Landing Page de Evento",
-        "category":  "Landing Page",
+        "key":       "clinica-balvedi",
+        "title":     "Clínica Balvedi",
+        "category":  "Sitio Web",
         "image":     "",
-        "summary":   "Página visualmente impactante para comunicar energía y convertir visitantes en inscritos.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "El cliente necesitaba transmitir entusiasmo y urgencia simplificando el proceso de inscripción.",
-        "solution":  "Hero impactante con cuenta regresiva, destacados de ponentes y formulario de inscripción en un paso integrado en la página.",
-        "result":    "Meta de inscripciones alcanzada antes del plazo.",
-        "liveUrl":   ""
-      },
-      {
-        "key":       "ecommerce-product",
-        "title":     "Página de Producto E-commerce",
-        "category":  "E-commerce",
-        "image":     "",
-        "summary":   "Página de producto de alta conversión combinando UI limpia con principios de diseño persuasivo.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "Baja tasa de agregar al carrito a pesar de buena calidad y precio competitivo.",
-        "solution":  "Rediseño con jerarquía visual clara, señales de confianza y flujo de compra simplificado.",
-        "result":    "Aumento en la conversión y reducción en el abandono del carrito.",
-        "liveUrl":   ""
-      },
-      {
-        "key":       "creative-portfolio",
-        "title":     "Portfolio Creativo",
-        "category":  "Portfolio",
-        "image":     "",
-        "summary":   "Portfolio premium para profesional creativo diseñado para atraer clientes internacionales.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "Un profesional talentoso sin presencia digital sólida, perdiendo oportunidades internacionales.",
-        "solution":  "Portfolio single-page exclusivo con animaciones personalizadas, soporte multilingüe y estrategia de contacto enfocada en acción directa.",
-        "result":    "El cliente recibió su primera consulta internacional semanas después del lanzamiento.",
-        "liveUrl":   ""
-      },
-      {
-        "key":       "design-system",
-        "title":     "Design System Corporativo",
-        "category":  "Design System",
-        "image":     "",
-        "summary":   "Biblioteca de componentes que eliminó inconsistencias visuales en 400+ proyectos y aceleró las entregas.",
-        "tags":      ["Figma", "HTML", "CSS", "Vue 3"],
-        "challenge": "Inconsistencias visuales en todas las entregas, requiriendo recreación manual de cada UI desde cero.",
-        "solution":  "Biblioteca de componentes reutilizables en Figma y código, con documentación. Redujo drásticamente el tiempo de setup por proyecto.",
-        "result":    "Entregas más rápidas, calidad visual consistente y base escalable para proyectos futuros.",
+        "summary":   "Sitio web para clínica médica construido con React y Framer Motion — UI limpia y accesible, arquitecturado para un roadmap de SEO, chatbot con IA y funcionalidades de conversión.",
+        "tags":      ["React 18", "Vite", "Framer Motion", "CSS Modules", "GitHub Actions"],
+        "challenge": "Una clínica médica necesitaba una presencia digital moderna y confiable que reflejara atención de calidad — y que pudiera servir de base para futuras funcionalidades de generación de leads e interacción con IA.",
+        "solution":  "Construido con React 18, Vite y Framer Motion para animaciones suaves e intencionadas. La arquitectura es modular por diseño — cada sección pensada para evolucionar. CI/CD vía GitHub Actions garantiza deploys automatizados y consistentes desde el primer día.",
+        "result":    "Fase 1 en vivo. El roadmap incluye SEO avanzado (optimizado para búsqueda con IA), chatbot de captación de leads, simuladores interactivos para pacientes, seguimiento de conversiones e iteración basada en analytics. Diseñado para crecer con el negocio.",
         "liveUrl":   ""
       }
     ]
   },
   "numbers": {
     "items": [
-      { "value": "400+", "label": "Sitios entregados" },
-      { "value": "4+",   "label": "Años de experiencia" },
-      { "value": "3",    "label": "Idiomas" },
-      { "value": "∞",    "label": "Atención al detalle" }
+      { "value": "400+", "label": "Proyectos Entregados" },
+      { "value": "4+",   "label": "Años de Experiencia" },
+      { "value": "3+",   "label": "Apps en Producción" },
+      { "value": "10+",  "label": "Desarrolladores Liderados" }
     ]
   },
-  "process": {
-    "label":    "Proceso",
-    "title":    "Cómo trabajo",
-    "subtitle": "Desde la primera conversación hasta el sitio en vivo — cada paso con intención.",
-    "steps": [
+  "skills": {
+    "label":    "Habilidades",
+    "title":    "Lo que aporto al proyecto",
+    "subtitle": "Años de experiencia en producción abarcando diseño, desarrollo front-end y liderazgo de equipos.",
+    "legend": {
+      "core":   "Expertise principal",
+      "modern": "Stack moderna en uso activo"
+    },
+    "groups": [
       {
-        "number":      "01",
-        "title":       "Descubrimiento",
-        "description": "Escucho antes de diseñar. Entender tus objetivos, audiencia y negocio es como me aseguro de que el sitio funcione — no solo que se vea bien."
+        "key":   "frontend",
+        "title": "Desarrollo Front-end",
+        "items": [
+          { "name": "HTML5",        "core": true  },
+          { "name": "CSS / LESS",   "core": true  },
+          { "name": "JavaScript",   "core": true  },
+          { "name": "jQuery",       "core": true  },
+          { "name": "React",        "core": false },
+          { "name": "Next.js",      "core": false },
+          { "name": "Vue 3",        "core": false },
+          { "name": "Nuxt 3",       "core": false },
+          { "name": "TypeScript",   "core": false },
+          { "name": "Tailwind CSS", "core": false }
+        ]
       },
       {
-        "number":      "02",
-        "title":       "Diseño",
-        "description": "Diseño en Figma, creando wireframes y prototipos de alta fidelidad. Verás exactamente cómo lucirá el sitio antes de que se escriba una sola línea de código."
+        "key":   "design",
+        "title": "Diseño & UX",
+        "items": [
+          { "name": "Figma",            "core": true },
+          { "name": "UI Design",        "core": true },
+          { "name": "UX Design",        "core": true },
+          { "name": "Diseño Responsivo","core": true },
+          { "name": "Design Systems",   "core": true }
+        ]
       },
       {
-        "number":      "03",
-        "title":       "Desarrollo",
-        "description": "Desarrollo con HTML, CSS y JavaScript limpio. Pixel-perfect, responsivo en todos los tamaños y optimizado para rendimiento."
+        "key":   "engineering",
+        "title": "Ingeniería & Herramientas",
+        "items": [
+          { "name": "Git / GitHub",         "core": true  },
+          { "name": "REST APIs",            "core": false },
+          { "name": "MySQL / MariaDB",      "core": false },
+          { "name": "Auth / JWT",           "core": false },
+          { "name": "Integraciones con IA", "core": false },
+          { "name": "Puppeteer",            "core": false },
+          { "name": "GitHub Actions",       "core": false },
+          { "name": "Vite",                 "core": false },
+          { "name": "PM2",                  "core": false }
+        ]
       },
       {
-        "number":      "04",
-        "title":       "Revisión",
-        "description": "Revisamos juntos y refinamos hasta que esté perfecto. Mi atención al detalle hace que las rondas de feedback sean rápidas y claras."
-      },
-      {
-        "number":      "05",
-        "title":       "Lanzamiento",
-        "description": "Me encargo de las verificaciones finales, pruebas cross-browser y publicación. Recibes un sitio listo — y un socio en quien confiar después de la entrega."
-      }
-    ]
-  },
-  "services": {
-    "label":    "Servicios",
-    "title":    "Lo que ofrezco",
-    "subtitle": "Experiencias digitales completas para marcas que quieren destacarse.",
-    "items": [
-      {
-        "key":         "website",
-        "title":       "Diseño & Desarrollo de Sitios Web",
-        "description": "Sitios web completos desde el concepto hasta el lanzamiento — estrategia, diseño y desarrollo en un proceso único."
-      },
-      {
-        "key":         "landing",
-        "title":       "Diseño de Landing Pages",
-        "description": "Páginas de alta conversión visualmente pulidas, diseñadas para convertir visitantes en leads o clientes."
-      },
-      {
-        "key":         "ui",
-        "title":       "UI Design (Figma)",
-        "description": "Diseño de interfaces, bibliotecas de componentes y prototipos interactivos — listos para desarrollo o presentación."
-      },
-      {
-        "key":         "frontend",
-        "title":       "Desarrollo Front-end",
-        "description": "Implementación pixel-perfect en HTML, CSS y JavaScript — responsiva, accesible y rápida."
+        "key":   "leadership",
+        "title": "Liderazgo & Entrega",
+        "items": [
+          { "name": "Gestión de Equipos",          "core": true },
+          { "name": "QA & Code Review",            "core": true },
+          { "name": "Mejora de Procesos",          "core": true },
+          { "name": "Figma → Browser",             "core": true },
+          { "name": "Entrega de Extremo a Extremo","core": true },
+          { "name": "Mentoría",                    "core": true }
+        ]
       }
     ]
   },
@@ -179,21 +148,21 @@
     "label":      "Sobre mí",
     "title":      "La persona detrás del trabajo",
     "paragraphs": [
-      "Diseño y desarrollo sitios web modernos que combinan código limpio, experiencias intuitivas e interfaces visualmente pulidas. Lo que me motiva es ese momento en que el cliente ve su sitio por primera vez y dice — esto es exactamente lo que imaginé.",
-      "Mi formación es poco común: pienso como diseñador y construyo como desarrollador. Eso significa cero pérdida entre el archivo de Figma y el navegador. Lo que ves en el prototipo es lo que recibes en producción — hasta el último píxel.",
-      "En 4 años, he diseñado y desarrollado 400+ sitios web — desde landing pages para startups hasta sitios completos para marcas establecidas. Cada uno construido con el mismo cuidado: desde el briefing hasta el lanzamiento."
+      "Trabajo en la intersección del diseño y el desarrollo front-end. A lo largo de más de 4 años, he diseñado y construido 400+ sitios web y landing pages — desde páginas de rápida entrega para negocios locales hasta experiencias completamente personalizadas para marcas consolidadas. Lo que aporto es la capacidad de llevar un proyecto desde el briefing hasta el lanzamiento sin perder nada en la traducción entre diseño y código.",
+      "Mi stack ha evolucionado considerablemente. Hoy construyo aplicaciones web con React, Next.js, Vue 3 y Nuxt — incluyendo herramientas internas, dashboards y plataformas con IA que he construido y actualmente mantengo en producción. Esa evolución no ha cambiado cómo pienso sobre la calidad: cada píxel, interacción y línea de código es intencional.",
+      "Liderar el equipo front-end en mi empresa me enseñó que la gran ingeniería va más allá de escribir buen código. Estándares de calidad, procesos claros y ciclos de feedback significativos son lo que hace que un equipo entregue consistentemente. Llevo esa perspectiva a todo lo que trabajo: me importa el resultado, no solo la implementación."
     ],
     "toolsLabel": "Mi toolkit",
-    "tools": ["Figma", "HTML5", "CSS3", "JavaScript", "jQuery", "Responsive Design", "UI Design", "UX Design"]
+    "tools": ["React", "Next.js", "Vue 3", "Nuxt 3", "TypeScript", "JavaScript", "Figma", "HTML5", "CSS / LESS", "Tailwind CSS", "MySQL", "REST APIs"]
   },
   "contact": {
     "label":    "Contacto",
-    "title":    "Construyamos algo increíble.",
-    "subtitle": "Disponible para proyectos de diseño web y desarrollo front-end en todo el mundo.",
+    "title":    "Construyamos algo juntos.",
+    "subtitle": "Abierto a oportunidades remotas e internacionales — desarrollo front-end, diseño web/UI y aplicaciones full-stack.",
     "links": [
       {
         "id":          "email",
-        "label":       "E-mail",
+        "label":       "Email",
         "description": "contatoenricomv@gmail.com",
         "url":         "mailto:contatoenricomv@gmail.com"
       },
@@ -213,8 +182,8 @@
     "openNewTab": "Abrir en nueva pestaña"
   },
   "footer": {
-    "role":   "Diseñador Web · Desarrollador Front-end",
-    "made":   "Desarrollado con",
+    "role":   "Desarrollador Front-end · Diseñador Web/UI · Líder de Front-end",
+    "made":   "Construido con",
     "by":     "por Enrico Mendes Vienhage",
     "rights": "Todos los derechos reservados.",
     "github": "GitHub"
@@ -234,7 +203,7 @@
     "skipToContent": "Ir al contenido principal",
     "menuOpen":      "Abrir menú de navegación",
     "menuClose":     "Cerrar menú de navegación",
-    "externalLink":  "Abre en nueva pestaña",
+    "externalLink":  "Se abre en nueva pestaña",
     "closeModal":    "Cerrar"
   }
 }

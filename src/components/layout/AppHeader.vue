@@ -92,11 +92,10 @@ const menuOpen = ref(false)
 const isScrolled = ref(false)
 
 const navItems: NavItem[] = [
-  { key: 'work',     target: 'work' },
-  { key: 'process',  target: 'process' },
-  { key: 'services', target: 'services' },
-  { key: 'about',    target: 'about' },
-  { key: 'contact',  target: 'contact' }
+  { key: 'work',    target: 'work' },
+  { key: 'skills',  target: 'skills' },
+  { key: 'about',   target: 'about' },
+  { key: 'contact', target: 'contact' }
 ]
 
 const { activeSection } = useScrollSpy(navItems.map(i => i.target))

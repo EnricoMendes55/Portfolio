@@ -47,3 +47,14 @@ export interface ContactLink {
   description: string
   url: string
 }
+
+export interface SkillItem {
+  name: string
+  core: boolean
+}
+
+export interface SkillGroup {
+  key: string
+  title: string
+  items: SkillItem[]
+}

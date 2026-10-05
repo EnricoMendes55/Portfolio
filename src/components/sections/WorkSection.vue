@@ -213,13 +213,10 @@ onUnmounted(() => {
     background: var(--bg-surface-raised);
   }
 
-  // Category-specific placeholder gradients
-  &__thumb--saas-landing        { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); }
-  &__thumb--corporate-website   { background: linear-gradient(135deg, #1a1a2e 0%, #6366f1 100%); }
-  &__thumb--event-landing       { background: linear-gradient(135deg, #0f2027 0%, #d97706 100%); }
-  &__thumb--ecommerce-product   { background: linear-gradient(135deg, #0d2137 0%, #0891b2 100%); }
-  &__thumb--creative-portfolio  { background: linear-gradient(135deg, #1a0533 0%, #7c3aed 100%); }
-  &__thumb--design-system       { background: linear-gradient(135deg, #0a1628 0%, #059669 100%); }
+  // Project-specific placeholder gradients
+  &__thumb--ai-briefing     { background: linear-gradient(135deg, #0f0c29 0%, #302b63 55%, #4a3f8a 100%); }
+  &__thumb--bi-dashboard    { background: linear-gradient(135deg, #071a24 0%, #0d4a5c 55%, #0a8a6a 100%); }
+  &__thumb--clinica-balvedi { background: linear-gradient(135deg, #0c1e2e 0%, #1a4a6b 55%, #1e7a9b 100%); }
 
   &__img {
     width: 100%;

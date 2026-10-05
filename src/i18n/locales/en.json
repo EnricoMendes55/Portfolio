@@ -1,177 +1,146 @@
 {
   "nav": {
-    "work":     "Work",
-    "process":  "Process",
-    "services": "Services",
-    "about":    "About",
-    "contact":  "Contact",
-    "hireMe":   "Hire Me"
+    "work":    "Work",
+    "skills":  "Skills",
+    "about":   "About",
+    "contact": "Contact",
+    "hireMe":  "Hire Me"
   },
   "hero": {
     "name":     "Enrico Mendes Vienhage",
-    "headline": "I design and build websites people are proud to share.",
-    "role":     "Website Design · Landing Pages · Front-end Development",
+    "headline": "I design and build digital experiences — from pixel-perfect websites to full-stack applications.",
+    "role":     "Front-end Developer · Web/UI Designer · Front-end Lead",
     "trust": [
-      { "value": "400+", "label": "Websites Delivered" },
+      { "value": "400+", "label": "Projects Delivered" },
       { "value": "4+",   "label": "Years of Experience" },
-      { "value": "3",    "label": "Languages" }
+      { "value": "3+",   "label": "Apps in Production" }
     ],
     "cta": {
-      "primary":   "See my work",
-      "secondary": "Let's talk"
+      "primary":   "View my work",
+      "secondary": "Contact me"
     },
     "scroll": "Scroll to explore"
   },
   "work": {
     "label":     "Work",
-    "title":     "Selected projects",
-    "subtitle":  "A curated selection of websites, landing pages, and interfaces I've designed and built.",
-    "seeCase":   "See case",
+    "title":     "Featured projects",
+    "subtitle":  "Real problems. Real solutions. A mix of web design craft and modern engineering.",
+    "seeCase":   "View case",
     "close":     "Close",
-    "challenge": "Challenge",
-    "solution":  "Solution",
-    "result":    "Result",
-    "stack":     "Stack",
+    "challenge": "The Challenge",
+    "solution":  "What I Built",
+    "result":    "The Outcome",
+    "stack":     "Tech Stack",
     "viewLive":  "View live",
     "items": [
       {
-        "key":       "saas-landing",
-        "title":     "SaaS Landing Page",
-        "category":  "Landing Page",
+        "key":       "ai-briefing",
+        "title":     "AI-Powered Briefing Platform",
+        "category":  "Web Application",
         "image":     "",
-        "summary":   "High-converting landing page focused on clear value proposition and frictionless conversion.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "A strong product had low conversion rates due to a cluttered, unfocused landing page.",
-        "solution":  "Redesigned the entire page hierarchy to guide the visitor from problem to solution in 3 scrolls — clear CTA above the fold, social proof, and a clean pricing table.",
-        "result":    "Significant improvement in conversion rate and average session duration.",
+        "summary":   "A 16,000-line, 11-step platform that transforms the agency briefing process — from client intake to Figma-ready specs, powered by AI and automation.",
+        "tags":      ["Next.js", "React", "TypeScript", "Google Gemini", "Figma API", "Puppeteer", "MariaDB", "JWT"],
+        "challenge": "The agency's web design briefing process was entirely manual — designers spent hours gathering client information, extracting brand identity, and writing specs from scratch. The process was slow, inconsistent, and hard to scale.",
+        "solution":  "Built a complete 11-step guided briefing system with 243 visual templates and 26 component categories (~16,000 lines of code). The system automatically analyzes the client's existing website using Puppeteer, extracts visual identity, and uses Google Gemini to generate and interpret content. On completion, it outputs a structured PDF, a Bitrix24-synced dataset, a Figma component JSON map, and a navigable website preview. Architecture principle: Determinism where it matters. AI where it adds value. Role: sole developer — architecture to deployment.",
+        "result":    "Briefing time reduced from hours to minutes. Every project now starts with a structured, design-ready brief. Figma receives the exact component map — no interpretation gaps, no information lost between client and designer.",
         "liveUrl":   ""
       },
       {
-        "key":       "corporate-website",
-        "title":     "Corporate Website Redesign",
+        "key":       "bi-dashboard",
+        "title":     "Front-end BI & Management Dashboard",
+        "category":  "Internal Tool",
+        "image":     "",
+        "summary":   "A full-stack operational dashboard that turned gut-feel team management into data-driven decisions — built entirely by me, from architecture to deployment.",
+        "tags":      ["Nuxt 3", "Vue 3", "Tailwind CSS", "MySQL/MariaDB", "Bitrix24 API", "JWT", "PM2"],
+        "challenge": "Managing a front-end team of 10+ developers without real-time visibility into deliveries, individual performance, QA quality, or process bottlenecks. Reporting was manual. Decisions were based on gut feeling.",
+        "solution":  "Designed and built a full management dashboard pulling live data from Bitrix24, a custom internal API, and a MySQL database. Tracks: deliveries, tasks, deadlines, QA scores, development time, revision history, attendance, individual goals, performance rankings, and custom reports. All charts built manually with SVG and CSS — no charting framework. Full ownership: design, front-end, back-end, DevOps.",
+        "result":    "The team now has full operational visibility. Performance reviews are objective and data-driven. Process bottlenecks are identified and resolved before they escalate. Leadership decisions are backed by real numbers, not estimates.",
+        "liveUrl":   ""
+      },
+      {
+        "key":       "clinica-balvedi",
+        "title":     "Clínica Balvedi",
         "category":  "Website",
         "image":     "",
-        "summary":   "Full redesign modernizing the visual identity and improving user experience from the ground up.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "Outdated design, high bounce rate, and no mobile optimization.",
-        "solution":  "Complete visual redesign with a modern design system, mobile-first development, and content restructuring to drive contact inquiries.",
-        "result":    "Reduced bounce rate and increased time on page.",
-        "liveUrl":   ""
-      },
-      {
-        "key":       "event-landing",
-        "title":     "Event Landing Page",
-        "category":  "Landing Page",
-        "image":     "",
-        "summary":   "Visually-driven page designed to communicate energy and convert visitors into registrations.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "The client needed to convey excitement and urgency while simplifying the registration process.",
-        "solution":  "Bold hero with countdown timer, speaker highlights, and a one-step registration form embedded directly on the page.",
-        "result":    "Registration target achieved ahead of schedule.",
-        "liveUrl":   ""
-      },
-      {
-        "key":       "ecommerce-product",
-        "title":     "E-commerce Product Page",
-        "category":  "E-commerce",
-        "image":     "",
-        "summary":   "High-converting product page combining clean UI with persuasive design principles.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "Low add-to-cart rate despite good product quality and competitive pricing.",
-        "solution":  "Redesigned with a clear visual hierarchy, trust signals, and a streamlined purchase flow.",
-        "result":    "Increased add-to-cart conversion and lower cart abandonment.",
-        "liveUrl":   ""
-      },
-      {
-        "key":       "creative-portfolio",
-        "title":     "Creative Portfolio",
-        "category":  "Portfolio",
-        "image":     "",
-        "summary":   "Premium portfolio for a creative professional designed to attract international clients.",
-        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
-        "challenge": "A talented professional with no strong online presence, missing international opportunities.",
-        "solution":  "Bespoke single-page portfolio with custom animations, multilingual support, and a direct-action contact strategy.",
-        "result":    "Client received first international inquiry within weeks of launch.",
-        "liveUrl":   ""
-      },
-      {
-        "key":       "design-system",
-        "title":     "Corporate Design System",
-        "category":  "Design System",
-        "image":     "",
-        "summary":   "Component library eliminating visual inconsistencies across 400+ projects and accelerating delivery.",
-        "tags":      ["Figma", "HTML", "CSS", "Vue 3"],
-        "challenge": "Visual inconsistencies across all deliverables, requiring manual recreation of each UI from scratch.",
-        "solution":  "Built a reusable component library in Figma and code, with documentation. Reduced per-project setup time dramatically.",
-        "result":    "Faster delivery, consistent visual quality, and a scalable foundation for future projects.",
+        "summary":   "Healthcare website built with React and Framer Motion — clean, accessible UI architected for a roadmap of SEO, AI chatbot, and conversion features.",
+        "tags":      ["React 18", "Vite", "Framer Motion", "CSS Modules", "GitHub Actions"],
+        "challenge": "A medical clinic needed a modern, trustworthy online presence that reflected quality care — and that could serve as the foundation for future lead-generation and AI-powered patient engagement features.",
+        "solution":  "Built with React 18, Vite, and Framer Motion for smooth, purposeful animations. Architecture is intentionally modular — every section designed to evolve. CI/CD via GitHub Actions ensures automated, consistent deployments from day one.",
+        "result":    "Phase 1 live. Roadmap includes advanced SEO (optimized for AI search), a lead-gen chatbot, interactive patient simulators, conversion tracking, and analytics-driven iteration. Designed to grow with the business.",
         "liveUrl":   ""
       }
     ]
   },
   "numbers": {
     "items": [
-      { "value": "400+", "label": "Websites Delivered" },
+      { "value": "400+", "label": "Projects Delivered" },
       { "value": "4+",   "label": "Years of Experience" },
-      { "value": "3",    "label": "Languages Spoken" },
-      { "value": "∞",    "label": "Attention to Detail" }
+      { "value": "3+",   "label": "Apps in Production" },
+      { "value": "10+",  "label": "Developers Led" }
     ]
   },
-  "process": {
-    "label":    "Process",
-    "title":    "How I work",
-    "subtitle": "From the first conversation to a live website — every step handled with intention.",
-    "steps": [
+  "skills": {
+    "label":    "Skills",
+    "title":    "What I bring to the table",
+    "subtitle": "Years of production experience across design, front-end development, and team leadership.",
+    "legend": {
+      "core":   "Core expertise",
+      "modern": "Modern stack in active use"
+    },
+    "groups": [
       {
-        "number":      "01",
-        "title":       "Discovery",
-        "description": "I listen before I design. Understanding your goals, audience, and business is how I make sure the website works — not just looks good."
+        "key":   "frontend",
+        "title": "Front-end Development",
+        "items": [
+          { "name": "HTML5",        "core": true  },
+          { "name": "CSS / LESS",   "core": true  },
+          { "name": "JavaScript",   "core": true  },
+          { "name": "jQuery",       "core": true  },
+          { "name": "React",        "core": false },
+          { "name": "Next.js",      "core": false },
+          { "name": "Vue 3",        "core": false },
+          { "name": "Nuxt 3",       "core": false },
+          { "name": "TypeScript",   "core": false },
+          { "name": "Tailwind CSS", "core": false }
+        ]
       },
       {
-        "number":      "02",
-        "title":       "Design",
-        "description": "I design in Figma, creating wireframes and high-fidelity prototypes. You see exactly what the website will look like before a single line of code is written."
+        "key":   "design",
+        "title": "Design & UX",
+        "items": [
+          { "name": "Figma",             "core": true },
+          { "name": "UI Design",         "core": true },
+          { "name": "UX Design",         "core": true },
+          { "name": "Responsive Design", "core": true },
+          { "name": "Design Systems",    "core": true }
+        ]
       },
       {
-        "number":      "03",
-        "title":       "Development",
-        "description": "I build with clean HTML, CSS, and JavaScript. Pixel-perfect, responsive on every screen size, and optimized for performance."
+        "key":   "engineering",
+        "title": "Engineering & Tools",
+        "items": [
+          { "name": "Git / GitHub",    "core": true  },
+          { "name": "REST APIs",       "core": false },
+          { "name": "MySQL / MariaDB", "core": false },
+          { "name": "Auth / JWT",      "core": false },
+          { "name": "AI Integrations", "core": false },
+          { "name": "Puppeteer",       "core": false },
+          { "name": "GitHub Actions",  "core": false },
+          { "name": "Vite",            "core": false },
+          { "name": "PM2",             "core": false }
+        ]
       },
       {
-        "number":      "04",
-        "title":       "Review",
-        "description": "We review together and refine until it's right. My attention to detail means feedback rounds are fast and clear."
-      },
-      {
-        "number":      "05",
-        "title":       "Launch",
-        "description": "I handle the final checks, cross-browser testing, and go-live. You get a website that's ready — and a partner you can count on after delivery."
-      }
-    ]
-  },
-  "services": {
-    "label":    "Services",
-    "title":    "What I offer",
-    "subtitle": "End-to-end digital experiences for brands that want to stand out.",
-    "items": [
-      {
-        "key":         "website",
-        "title":       "Website Design & Development",
-        "description": "Complete websites from concept to launch — strategy, design, and development in one seamless process."
-      },
-      {
-        "key":         "landing",
-        "title":       "Landing Page Design",
-        "description": "High-converting, visually polished pages designed to turn visitors into leads or customers."
-      },
-      {
-        "key":         "ui",
-        "title":       "UI Design (Figma)",
-        "description": "Interface design, component libraries, and interactive prototypes — ready for development or client presentation."
-      },
-      {
-        "key":         "frontend",
-        "title":       "Front-end Development",
-        "description": "Pixel-perfect HTML, CSS, and JavaScript implementation of any design — responsive, accessible, and fast."
+        "key":   "leadership",
+        "title": "Leadership & Delivery",
+        "items": [
+          { "name": "Team Management",       "core": true },
+          { "name": "QA & Code Review",      "core": true },
+          { "name": "Process Improvement",   "core": true },
+          { "name": "Figma → Browser",       "core": true },
+          { "name": "Full Project Delivery", "core": true },
+          { "name": "Mentoring",             "core": true }
+        ]
       }
     ]
   },
@@ -179,17 +148,17 @@
     "label":      "About",
     "title":      "The person behind the work",
     "paragraphs": [
-      "I design and build modern websites that combine clean code, intuitive experiences, and visually polished interfaces. What drives me is that moment when a client sees their website for the first time and says — this is exactly what I imagined.",
-      "My background is rare: I think like a designer and build like a developer. That means no lost-in-translation between the Figma file and the browser. What you see in the prototype is what you get in production — down to the last pixel.",
-      "Over 4 years, I've designed and built 400+ websites — from landing pages for startups to full websites for established brands. Every single one built with the same care: from briefing to launch."
+      "I work at the intersection of design and front-end development. Over 4 years, I've designed and built 400+ websites and landing pages — from quick-turnaround pages for local businesses to fully custom experiences for established brands. What I bring is the ability to take a project from briefing to launch without losing anything in translation between design and code.",
+      "My stack has evolved substantially. Today I build web applications with React, Next.js, Vue 3, and Nuxt — including internal tools, dashboards, and AI-powered platforms that I've built and currently maintain in production. That evolution hasn't changed how I think about craft: every pixel, interaction, and line of code is intentional.",
+      "Leading the front-end team at my company taught me that great engineering goes beyond writing good code. Quality standards, clear processes, and meaningful feedback loops are what make a team consistently deliver. I bring that perspective to everything I work on: I care about the outcome, not just the implementation."
     ],
     "toolsLabel": "My toolkit",
-    "tools": ["Figma", "HTML5", "CSS3", "JavaScript", "jQuery", "Responsive Design", "UI Design", "UX Design"]
+    "tools": ["React", "Next.js", "Vue 3", "Nuxt 3", "TypeScript", "JavaScript", "Figma", "HTML5", "CSS / LESS", "Tailwind CSS", "MySQL", "REST APIs"]
   },
   "contact": {
     "label":    "Contact",
-    "title":    "Let's build something great.",
-    "subtitle": "Available for website design and front-end development projects worldwide.",
+    "title":    "Let's build something together.",
+    "subtitle": "Open to remote and international opportunities — front-end development, web/UI design, and full-stack applications.",
     "links": [
       {
         "id":          "email",
@@ -213,7 +182,7 @@
     "openNewTab": "Open in new tab"
   },
   "footer": {
-    "role":   "Website & Landing Page Designer · Front-end Developer",
+    "role":   "Front-end Developer · Web/UI Designer · Front-end Lead",
     "made":   "Built with",
     "by":     "by Enrico Mendes Vienhage",
     "rights": "All rights reserved.",
