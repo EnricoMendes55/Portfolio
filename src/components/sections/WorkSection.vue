@@ -7,47 +7,85 @@
         <p class="section__subtitle animate-in delay-1">{{ t('work.subtitle') }}</p>
       </div>
 
-      <div class="work-section__grid">
+      <div class="work-section__list">
         <article
           v-for="(item, index) in workItems"
           :key="item.key"
-          class="work-section__card animate-in"
-          :style="{ transitionDelay: `${(index % 3) * 80}ms` }"
-          @click="openCase(item)"
-          role="button"
-          tabindex="0"
-          @keydown.enter="openCase(item)"
-          :aria-label="item.title"
+          class="work-section__case animate-in"
+          :class="[
+            `work-section__case--${item.key}`,
+            { 'work-section__case--featured': item.featured }
+          ]"
+          :style="{ transitionDelay: `${index * 120}ms` }"
         >
-          <!-- Image / Placeholder -->
-          <div
-            class="work-section__thumb"
-            :class="`work-section__thumb--${item.key}`"
-          >
-            <img
-              v-if="item.image"
-              :src="item.image"
-              :alt="item.title"
-              loading="lazy"
-              class="work-section__img"
-            />
-            <div v-else class="work-section__placeholder">
-              <span class="work-section__placeholder-text">{{ item.category }}</span>
+          <!-- Content -->
+          <div class="work-section__case-body">
+            <div class="work-section__case-meta">
+              <span class="work-section__case-num">0{{ index + 1 }}</span>
+              <span class="work-section__case-cat">{{ item.category }}</span>
             </div>
 
-            <!-- Hover overlay -->
-            <div class="work-section__overlay">
-              <span class="work-section__see-case">{{ t('work.seeCase') }} →</span>
+            <h3 class="work-section__case-title">{{ item.title }}</h3>
+            <p class="work-section__case-summary">{{ item.summary }}</p>
+
+            <!-- Stats grid (AI Briefing) -->
+            <div
+              v-if="item.highlights?.length"
+              class="work-section__case-stats"
+            >
+              <div
+                v-for="h in item.highlights"
+                :key="h.label"
+                class="work-section__case-stat"
+              >
+                <strong>{{ h.value }}</strong>
+                <span>{{ h.label }}</span>
+              </div>
             </div>
+
+            <!-- Callout (BI Dashboard) -->
+            <p v-if="item.callout" class="work-section__case-callout">
+              {{ item.callout }}
+            </p>
+
+            <!-- Stack -->
+            <p class="work-section__case-stack">
+              {{ item.tags.slice(0, 5).join(' · ') }}
+            </p>
+
+            <!-- CTA -->
+            <button
+              class="work-section__case-cta"
+              @click="openCase(item)"
+            >
+              {{ t('work.seeCase') }} <span aria-hidden="true">→</span>
+            </button>
           </div>
 
-          <!-- Card info -->
-          <div class="work-section__info">
-            <span class="work-section__category">{{ item.category }}</span>
-            <h3 class="work-section__title">{{ item.title }}</h3>
-            <p class="work-section__summary">{{ item.summary }}</p>
-            <div class="work-section__tags">
-              <span v-for="tag in item.tags" :key="tag" class="work-section__tag">{{ tag }}</span>
+          <!-- Media -->
+          <div
+            class="work-section__case-media"
+            @click="openCase(item)"
+            role="button"
+            tabindex="0"
+            :aria-label="`${t('work.seeCase')}: ${item.title}`"
+            @keydown.enter="openCase(item)"
+          >
+            <div
+              class="work-section__case-bg"
+              :class="`work-section__thumb--${item.key}`"
+            >
+              <img
+                v-if="item.image"
+                :src="item.image"
+                :alt="item.title"
+                class="work-section__case-img"
+              />
+            </div>
+            <div class="work-section__case-overlay">
+              <span class="work-section__case-overlay-label">
+                {{ t('work.seeCase') }} →
+              </span>
             </div>
           </div>
         </article>
@@ -74,7 +112,6 @@
           </button>
 
           <div class="work-section__modal-body">
-            <!-- Modal image -->
             <div
               class="work-section__modal-thumb"
               :class="`work-section__thumb--${activeCase.key}`"
@@ -83,7 +120,7 @@
                 v-if="activeCase.image"
                 :src="activeCase.image"
                 :alt="activeCase.title"
-                class="work-section__img"
+                class="work-section__case-img"
               />
               <div v-else class="work-section__placeholder">
                 <span class="work-section__placeholder-text">{{ activeCase.category }}</span>
@@ -91,7 +128,7 @@
             </div>
 
             <div class="work-section__modal-content">
-              <span class="work-section__category">{{ activeCase.category }}</span>
+              <span class="work-section__cat-label">{{ activeCase.category }}</span>
               <h2 class="work-section__modal-title">{{ activeCase.title }}</h2>
 
               <div class="work-section__modal-section">
@@ -112,7 +149,11 @@
               <div class="work-section__modal-section">
                 <h4>{{ t('work.stack') }}</h4>
                 <div class="work-section__tags">
-                  <span v-for="tag in activeCase.tags" :key="tag" class="work-section__tag">{{ tag }}</span>
+                  <span
+                    v-for="tag in activeCase.tags"
+                    :key="tag"
+                    class="work-section__tag"
+                  >{{ tag }}</span>
                 </div>
               </div>
 
@@ -175,134 +216,303 @@ onUnmounted(() => {
 
 <style lang="less">
 .work-section {
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+  // ----------------------------------------------------------------
+  // Case list
+  // ----------------------------------------------------------------
+
+  &__list {
+    display: flex;
+    flex-direction: column;
     gap: var(--space-6);
+    margin-top: var(--space-16);
+  }
+
+  // ----------------------------------------------------------------
+  // Individual case — default layout (content left, media right)
+  // ----------------------------------------------------------------
+
+  &__case {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    min-height: 540px;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    background: var(--bg-surface);
+    border: 1px solid var(--bg-border);
+    transition: box-shadow var(--transition-normal);
+
+    &:hover {
+      box-shadow: 0 8px 40px rgb(0 0 0 / 0.18);
+    }
+
+    // BI Dashboard — media on left
+    &--bi-dashboard {
+      grid-template-columns: 3fr 2fr;
+
+      .work-section__case-media {
+        order: -1;
+      }
+    }
+
+    // Clínica Balvedi — balanced halves, slightly shorter
+    &--clinica-balvedi {
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
 
     .tablet({
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr !important;
+      min-height: auto;
+
+      &--bi-dashboard .work-section__case-media {
+        order: 0;
+      }
+    });
+  }
+
+  // ----------------------------------------------------------------
+  // Case body (text side)
+  // ----------------------------------------------------------------
+
+  &__case-body {
+    padding: var(--space-10) var(--space-10);
+    display: flex;
+    flex-direction: column;
+
+    .tablet({
+      padding: var(--space-8) var(--space-6);
+      order: 2;
     });
 
     .mobile-only({
-      grid-template-columns: 1fr;
+      padding: var(--space-6);
     });
   }
 
-  &__card {
-    .surface-card();
-    overflow: hidden;
-    cursor: pointer;
-    padding: 0;
-
-    &:hover {
-      .work-section__overlay {
-        opacity: 1;
-      }
-      .work-section__img,
-      .work-section__placeholder {
-        transform: scale(1.03);
-      }
-    }
+  &__case-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
   }
 
-  &__thumb {
-    position: relative;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    background: var(--bg-surface-raised);
-  }
-
-  // Project-specific placeholder gradients
-  &__thumb--ai-briefing     { background: linear-gradient(135deg, #0f0c29 0%, #302b63 55%, #4a3f8a 100%); }
-  &__thumb--bi-dashboard    { background: linear-gradient(135deg, #071a24 0%, #0d4a5c 55%, #0a8a6a 100%); }
-  &__thumb--clinica-balvedi { background: linear-gradient(135deg, #0c1e2e 0%, #1a4a6b 55%, #1e7a9b 100%); }
-
-  &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-normal);
-  }
-
-  &__placeholder {
-    width: 100%;
-    height: 100%;
-    .flex-center();
-    transition: transform var(--transition-normal);
-  }
-
-  &__placeholder-text {
+  &__case-num {
     font-size: var(--text-xs);
     font-weight: var(--font-semibold);
-    color: rgb(255 255 255 / 0.4);
+    color: var(--text-tertiary);
     letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
   }
 
-  &__overlay {
-    position: absolute;
-    inset: 0;
-    background: rgb(0 0 0 / 0.5);
-    .flex-center();
-    opacity: 0;
-    transition: opacity var(--transition-fast);
-    backdrop-filter: blur(2px);
-  }
-
-  &__see-case {
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
-    color: #fff;
-    letter-spacing: 0.02em;
-  }
-
-  &__info {
-    padding: var(--space-5) var(--space-6) var(--space-6);
-  }
-
-  &__category {
-    display: inline-block;
+  &__case-cat {
     font-size: var(--text-xs);
     font-weight: var(--font-semibold);
     color: var(--accent-default);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: var(--space-2);
   }
 
-  &__title {
-    font-size: var(--text-lg);
-    font-weight: var(--font-semibold);
+  &__case-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
     color: var(--text-primary);
-    margin-bottom: var(--space-2);
     line-height: var(--leading-snug);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+
+    .work-section__case--featured & {
+      font-size: var(--text-3xl);
+
+      .tablet({
+        font-size: var(--text-2xl);
+      });
+    }
+
+    .tablet({
+      font-size: var(--text-xl);
+    });
   }
 
-  &__summary {
+  &__case-summary {
     font-size: var(--text-sm);
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-4);
+    max-width: 400px;
+    margin-bottom: var(--space-6);
   }
 
-  &__tags {
+  // Stats grid (AI Briefing hero case)
+  &__case-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-5);
+    background: var(--bg-surface-raised);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-6);
+  }
+
+  &__case-stat {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2px;
+
+    strong {
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      color: var(--text-primary);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    span {
+      font-size: var(--text-xs);
+      color: var(--text-tertiary);
+      line-height: 1.4;
+    }
+  }
+
+  // Callout (BI Dashboard)
+  &__case-callout {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    padding: var(--space-3) var(--space-4);
+    border-left: 2px solid var(--accent-default);
+    background: var(--bg-surface-raised);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin-bottom: var(--space-6);
+    font-style: italic;
+  }
+
+  // Stack text line
+  &__case-stack {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    margin-top: auto;
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--bg-border);
+    margin-bottom: var(--space-5);
+  }
+
+  // Case CTA
+  &__case-cta {
+    display: inline-flex;
+    align-items: center;
     gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid var(--bg-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-5);
+    cursor: pointer;
+    transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+    width: fit-content;
+
+    &:hover {
+      background: var(--bg-surface-raised);
+      border-color: var(--text-tertiary);
+    }
   }
 
-  &__tag {
-    .badge();
+  // ----------------------------------------------------------------
+  // Case media (image / gradient side)
+  // ----------------------------------------------------------------
+
+  &__case-media {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover .work-section__case-bg {
+      transform: scale(1.04);
+    }
+
+    &:hover .work-section__case-overlay {
+      opacity: 1;
+    }
+
+    .tablet({
+      aspect-ratio: 16 / 9;
+      order: 1;
+    });
   }
 
+  &__case-bg {
+    position: absolute;
+    inset: -2px;
+    transition: transform 0.6s ease;
+  }
+
+  &__case-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__case-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 0.42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    backdrop-filter: blur(3px);
+  }
+
+  &__case-overlay-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: #fff;
+    letter-spacing: 0.06em;
+    padding: var(--space-3) var(--space-5);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: var(--radius-full);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
+  }
+
+  // ----------------------------------------------------------------
+  // Gradient backgrounds (card + modal)
+  // ----------------------------------------------------------------
+
+  &__thumb--ai-briefing {
+    background: linear-gradient(145deg, #0f0c29 0%, #2d2060 40%, #4a3f8a 75%, #6b5fb0 100%);
+    width: 100%;
+    height: 100%;
+  }
+
+  &__thumb--bi-dashboard {
+    background: linear-gradient(145deg, #071a24 0%, #0a3545 40%, #0d6b55 75%, #0a9e78 100%);
+    width: 100%;
+    height: 100%;
+  }
+
+  &__thumb--clinica-balvedi {
+    background: linear-gradient(145deg, #0c1e2e 0%, #0e3354 40%, #1a5a8a 75%, #2282c0 100%);
+    width: 100%;
+    height: 100%;
+  }
+
+  // ----------------------------------------------------------------
   // Modal
+  // ----------------------------------------------------------------
+
   &__modal-backdrop {
     position: fixed;
     inset: 0;
-    background: rgb(0 0 0 / 0.7);
+    background: rgb(0 0 0 / 0.72);
     z-index: var(--z-modal);
-    .flex-center();
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: var(--space-4);
     backdrop-filter: blur(4px);
   }
@@ -341,6 +551,7 @@ onUnmounted(() => {
     aspect-ratio: 16 / 9;
     border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
     overflow: hidden;
+    position: relative;
   }
 
   &__modal-content {
@@ -349,6 +560,16 @@ onUnmounted(() => {
     .mobile-only({
       padding: var(--space-6);
     });
+  }
+
+  &__cat-label {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--accent-default);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
   }
 
   &__modal-title {
@@ -377,8 +598,37 @@ onUnmounted(() => {
       line-height: var(--leading-relaxed);
     }
   }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  &__tag {
+    .badge();
+  }
+
+  &__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 0;
+  }
+
+  &__placeholder-text {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: rgb(255 255 255 / 0.35);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
 }
 
+// Modal transition
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity var(--transition-normal);
@@ -393,7 +643,7 @@ onUnmounted(() => {
   opacity: 0;
 
   .work-section__modal {
-    transform: scale(0.96) translateY(8px);
+    transform: scale(0.96) translateY(10px);
     opacity: 0;
   }
 }

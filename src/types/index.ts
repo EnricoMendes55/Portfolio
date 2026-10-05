@@ -11,6 +11,11 @@ export interface TrustSignal {
   label: string
 }
 
+export interface WorkHighlight {
+  value: string
+  label: string
+}
+
 export interface WorkItem {
   key: string
   title: string
@@ -23,6 +28,9 @@ export interface WorkItem {
   result: string
   outcomeLabel?: string
   liveUrl: string
+  featured?: boolean
+  highlights?: WorkHighlight[]
+  callout?: string
 }
 
 export interface NumberItem {

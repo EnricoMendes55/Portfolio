@@ -38,7 +38,14 @@
         "title":        "Plataforma de Briefing com IA",
         "category":     "Aplicação Web",
         "image":        "",
+        "featured":     true,
         "outcomeLabel": "O que possibilita",
+        "highlights": [
+          { "value": "11",   "label": "Etapas guiadas" },
+          { "value": "243",  "label": "Modelos visuais" },
+          { "value": "26",   "label": "Categorias de componentes" },
+          { "value": "~16K", "label": "Linhas de código" }
+        ],
         "summary":      "Uma plataforma criada para substituir as etapas manuais e inconsistentes do processo de briefing da agência — 11 etapas guiadas, conteúdo assistido por IA e output estruturado pronto para o design.",
         "tags":         ["Next.js", "React", "TypeScript", "Google Gemini", "Figma API", "Puppeteer", "MariaDB", "JWT"],
         "challenge":    "Todo projeto de web design começava da mesma forma: um designer coletando manualmente as informações do cliente, extraindo identidade visual de screenshots e reescrevendo a mesma estrutura de especificação do zero. Lento, inconsistente e totalmente dependente de quem estava fazendo aquele briefing.",
@@ -52,6 +59,7 @@
         "category":     "Ferramenta Interna",
         "image":        "",
         "outcomeLabel": "Como ajuda",
+        "callout":      "Todos os gráficos desenvolvidos do zero com SVG e CSS — sem biblioteca de gráficos.",
         "summary":      "Um dashboard operacional criado para dar visibilidade real ao trabalho do time de front-end — entregas, qualidade e progresso individual, tudo em um só lugar.",
         "tags":         ["Nuxt 3", "Vue 3", "Tailwind CSS", "Bitrix24 REST API", "RHiD API", "MySQL/MariaDB", "JWT", "PM2"],
         "challenge":    "Gerenciar um time de desenvolvimento front-end sem dados reais sobre andamento das entregas, qualidade individual ou gargalos de processo. As decisões dependiam de avaliações subjetivas e relatórios compilados manualmente de fontes diferentes.",

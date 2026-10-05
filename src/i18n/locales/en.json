@@ -38,7 +38,14 @@
         "title":        "AI-Powered Briefing Platform",
         "category":     "Web Application",
         "image":        "",
+        "featured":     true,
         "outcomeLabel": "What it enables",
+        "highlights": [
+          { "value": "11",   "label": "Guided stages" },
+          { "value": "243",  "label": "Visual templates" },
+          { "value": "26",   "label": "Component categories" },
+          { "value": "~16K", "label": "Lines of code" }
+        ],
         "summary":      "A platform built to replace the manual, inconsistent steps of the agency's briefing process — 11 guided stages, AI-assisted content, and structured output ready for design.",
         "tags":         ["Next.js", "React", "TypeScript", "Google Gemini", "Figma API", "Puppeteer", "MariaDB", "JWT"],
         "challenge":    "Every web design project started the same way: a designer manually gathering information from the client, extracting visual identity from screenshots, and rewriting the same spec structure from scratch. Time-consuming, inconsistent, and entirely dependent on whoever was putting that brief together.",
@@ -52,6 +59,7 @@
         "category":     "Internal Tool",
         "image":        "",
         "outcomeLabel": "How it helps",
+        "callout":      "All charts built from scratch with SVG & CSS — no charting library.",
         "summary":      "An operational dashboard built to give real visibility into the front-end team's work — deliveries, quality, and individual progress, all in one place.",
         "tags":         ["Nuxt 3", "Vue 3", "Tailwind CSS", "Bitrix24 REST API", "RHiD API", "MySQL/MariaDB", "JWT", "PM2"],
         "challenge":    "Managing a front-end development team without real data on delivery progress, individual quality, or process bottlenecks. Decisions depended on subjective assessments and manually compiled reports from different sources.",

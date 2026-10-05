@@ -38,7 +38,14 @@
         "title":        "Plataforma de Briefing con IA",
         "category":     "Aplicación Web",
         "image":        "",
+        "featured":     true,
         "outcomeLabel": "Lo que posibilita",
+        "highlights": [
+          { "value": "11",   "label": "Etapas guiadas" },
+          { "value": "243",  "label": "Plantillas visuales" },
+          { "value": "26",   "label": "Categorías de componentes" },
+          { "value": "~16K", "label": "Líneas de código" }
+        ],
         "summary":      "Una plataforma creada para reemplazar los pasos manuales e inconsistentes del proceso de briefing de la agencia — 11 etapas guiadas, contenido asistido por IA y output estructurado listo para diseño.",
         "tags":         ["Next.js", "React", "TypeScript", "Google Gemini", "Figma API", "Puppeteer", "MariaDB", "JWT"],
         "challenge":    "Todo proyecto de diseño web comenzaba igual: un diseñador recopilando manualmente información del cliente, extrayendo identidad visual de capturas de pantalla y reescribiendo la misma estructura de especificaciones desde cero. Lento, inconsistente y totalmente dependiente de quien estuviera haciendo ese briefing.",
@@ -52,6 +59,7 @@
         "category":     "Herramienta Interna",
         "image":        "",
         "outcomeLabel": "Cómo ayuda",
+        "callout":      "Todos los gráficos construidos desde cero con SVG y CSS — sin librería de gráficos.",
         "summary":      "Un dashboard operacional creado para dar visibilidad real al trabajo del equipo front-end — entregas, calidad y progreso individual, todo en un solo lugar.",
         "tags":         ["Nuxt 3", "Vue 3", "Tailwind CSS", "Bitrix24 REST API", "RHiD API", "MySQL/MariaDB", "JWT", "PM2"],
         "challenge":    "Gestionar un equipo de desarrollo front-end sin datos reales sobre el progreso de entregas, calidad individual o cuellos de botella en el proceso. Las decisiones dependían de evaluaciones subjetivas e informes compilados manualmente desde diferentes fuentes.",
