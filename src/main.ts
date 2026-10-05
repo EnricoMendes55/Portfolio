@@ -8,6 +8,7 @@ import '@/styles/layout.less'
 import '@/styles/components.less'
 import '@/styles/sections/hero.less'
 
+
 const app = createApp(App)
 app.use(router)
 app.use(i18n)

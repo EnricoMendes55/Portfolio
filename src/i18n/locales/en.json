@@ -1,296 +1,240 @@
 {
   "nav": {
-    "home": "Home",
-    "trajectory": "Journey",
-    "impact": "Impact",
-    "cases": "Cases",
-    "skills": "Skills",
-    "resume": "Resume",
-    "contact": "Contact",
-    "hireMe": "Let's talk"
+    "work":     "Work",
+    "process":  "Process",
+    "services": "Services",
+    "about":    "About",
+    "contact":  "Contact",
+    "hireMe":   "Hire Me"
   },
   "hero": {
-    "greeting": "Hi, I'm",
-    "name": "Enrico Mendes Vienhage",
-    "role": "Front-end Development Supervisor",
-    "subtitle": "Transforming processes, products and teams through technology.",
-    "metrics": [
-      { "value": "4+",  "label": "years in Front-end" },
-      { "value": "+10", "label": "professionals led" },
-      { "value": "3",   "label": "languages: Portuguese, Spanish & English" },
-      { "value": "★",   "label": "Specialist in Front-end, Web Design, QA & Technical Leadership" }
+    "name":     "Enrico Mendes Vienhage",
+    "headline": "I design and build websites people are proud to share.",
+    "role":     "Website Design · Landing Pages · Front-end Development",
+    "trust": [
+      { "value": "400+", "label": "Websites Delivered" },
+      { "value": "4+",   "label": "Years of Experience" },
+      { "value": "3",    "label": "Languages" }
     ],
     "cta": {
-      "resume":   "Download Resume",
-      "linkedin": "LinkedIn",
-      "github":   "GitHub",
-      "contact":  "Contact"
+      "primary":   "See my work",
+      "secondary": "Let's talk"
     },
     "scroll": "Scroll to explore"
   },
-  "trajectory": {
-    "label": "Journey",
-    "title": "A journey of continuous growth",
-    "subtitle": "From hospitals to leading technology teams — each step shaped a more complete view of product, people, and process.",
-    "present": "Present",
-    "events": [
-      {
-        "year": "2018",
-        "title": "Career beginnings",
-        "company": "Hospital Universitário de Florianópolis",
-        "role": "Reception — Inpatient & Emergency"
-      },
-      {
-        "year": "2021",
-        "title": "Transition to IT",
-        "company": "Hospital Santa Terezinha",
-        "role": "IT"
-      },
-      {
-        "year": "2022",
-        "title": "Front-end Developer",
-        "company": "apresenta.me",
-        "role": "Front-end Developer"
-      },
-      {
-        "year": "2023",
-        "title": "Front-end Lead",
-        "company": "apresenta.me",
-        "role": "Front-end Lead"
-      },
-      {
-        "year": "2026",
-        "title": "Front-end Development Supervisor",
-        "company": "apresenta.me",
-        "role": "Front-end Development Supervisor",
-        "isCurrent": true
-      }
-    ]
-  },
-  "impact": {
-    "label": "Impact",
-    "title": "Results that move the business",
-    "subtitle": "Not just code — real transformation of processes, teams, and operations.",
-    "cards": [
-      {
-        "key": "team",
-        "icon": "team",
-        "title": "Built a Front-end department from the ground up",
-        "description": "When I joined the company, there was no established Front-end department. I helped create processes, technical standards, internal tools, operational metrics, and a quality culture.",
-        "results": [
-          "Current team with 7 professionals",
-          "Structured processes",
-          "Performance indicators",
-          "Greater operational predictability"
-        ]
-      },
-      {
-        "key": "design-system",
-        "icon": "design",
-        "title": "Design System creation",
-        "description": "Development of a reusable component library aligned with the company's production capacity.",
-        "results": [
-          "Visual consistency",
-          "Less rework",
-          "Scalability",
-          "Faster delivery"
-        ]
-      },
-      {
-        "key": "architecture",
-        "icon": "architecture",
-        "title": "Front-end architecture modernization",
-        "description": "Transformation from a monolithic CSS codebase to a modular architecture based on variables, reuse, and simplified maintenance.",
-        "results": [
-          "Better maintainability",
-          "Lower coupling",
-          "Higher productivity",
-          "Better technical quality"
-        ]
-      },
-      {
-        "key": "metrics",
-        "icon": "metrics",
-        "title": "Metrics-driven culture",
-        "description": "Creation of indicators, time tracking, task monitoring, and internal tools for productivity analysis.",
-        "results": [
-          "Data for decision making",
-          "Greater transparency",
-          "Continuous improvement"
-        ]
-      }
-    ]
-  },
-  "cases": {
-    "label": "Cases",
-    "title": "Projects that define my approach",
-    "subtitle": "Real problems, pragmatic solutions, measurable impact.",
-    "seeDetails": "See details",
-    "close": "Close",
-    "problem": "Problem",
-    "solution": "Solution",
-    "impact": "Impact",
-    "techStack": "Tech stack",
+  "work": {
+    "label":     "Work",
+    "title":     "Selected projects",
+    "subtitle":  "A curated selection of websites, landing pages, and interfaces I've designed and built.",
+    "seeCase":   "See case",
+    "close":     "Close",
+    "challenge": "Challenge",
+    "solution":  "Solution",
+    "result":    "Result",
+    "stack":     "Stack",
+    "viewLive":  "View live",
     "items": [
       {
-        "key": "ai-briefing",
-        "title": "AI-Powered Intelligent Briefing",
-        "category": "AI · Product",
-        "summary": "Dynamic briefing system with AI replacing a manual process based on forms.",
-        "tags": ["Vue 3", "AI", "UX Design"],
-        "problem": "Briefing was done via Google Forms, generating data inconsistencies and high rework rates for the production team.",
-        "solution": "Creation of a dynamic briefing system using AI for real-time results generation, adapting questions based on client's previous answers.",
-        "impact": [
-          "Better client experience",
-          "Significant reduction in rework",
-          "Greater operational speed"
-        ]
+        "key":       "saas-landing",
+        "title":     "SaaS Landing Page",
+        "category":  "Landing Page",
+        "image":     "",
+        "summary":   "High-converting landing page focused on clear value proposition and frictionless conversion.",
+        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
+        "challenge": "A strong product had low conversion rates due to a cluttered, unfocused landing page.",
+        "solution":  "Redesigned the entire page hierarchy to guide the visitor from problem to solution in 3 scrolls — clear CTA above the fold, social proof, and a clean pricing table.",
+        "result":    "Significant improvement in conversion rate and average session duration.",
+        "liveUrl":   ""
       },
       {
-        "key": "qa-system",
-        "title": "Automated QA System",
-        "category": "QA · Process",
-        "summary": "Standardized checklist and automated delivery validation system eliminating subjective evaluations.",
-        "tags": ["QA", "Automation", "Process"],
-        "problem": "Delivery quality evaluation was subjective, with no defined criteria, leading to inconsistencies and difficulty measuring team evolution.",
-        "solution": "Creation of a standardized checklist and automated validation system with objective criteria for each type of delivery.",
-        "impact": [
-          "Quality standardization",
-          "Error reduction",
-          "Greater predictability"
-        ]
+        "key":       "corporate-website",
+        "title":     "Corporate Website Redesign",
+        "category":  "Website",
+        "image":     "",
+        "summary":   "Full redesign modernizing the visual identity and improving user experience from the ground up.",
+        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
+        "challenge": "Outdated design, high bounce rate, and no mobile optimization.",
+        "solution":  "Complete visual redesign with a modern design system, mobile-first development, and content restructuring to drive contact inquiries.",
+        "result":    "Reduced bounce rate and increased time on page.",
+        "liveUrl":   ""
       },
       {
-        "key": "design-system",
-        "title": "Corporate Design System",
-        "category": "Design System · Front-end",
-        "summary": "Reusable component library that eliminated visual inconsistencies and accelerated deliveries.",
-        "tags": ["Design System", "Vue 3", "LESS", "Figma"],
-        "problem": "Inconsistent layouts fully dependent on manual creation for each new project, with no reuse across deliveries.",
-        "solution": "Creation of a reusable, standardized component library with usage documentation and design process integration.",
-        "impact": [
-          "Delivery scalability",
-          "Higher production speed",
-          "Consistent visual standardization"
-        ]
+        "key":       "event-landing",
+        "title":     "Event Landing Page",
+        "category":  "Landing Page",
+        "image":     "",
+        "summary":   "Visually-driven page designed to communicate energy and convert visitors into registrations.",
+        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
+        "challenge": "The client needed to convey excitement and urgency while simplifying the registration process.",
+        "solution":  "Bold hero with countdown timer, speaker highlights, and a one-step registration form embedded directly on the page.",
+        "result":    "Registration target achieved ahead of schedule.",
+        "liveUrl":   ""
       },
       {
-        "key": "people-management",
-        "title": "Team Management & Development",
-        "category": "Leadership · People",
-        "summary": "Implementation of goals, IDPs, and performance tracking transforming team growth.",
-        "tags": ["Leadership", "IDP", "Management", "Mentoring"],
-        "problem": "Absence of clear professional growth processes, no defined goals or structured monitoring of team members.",
-        "solution": "Implementation of individual goals, IDPs, performance tracking, and technical development with periodic reviews.",
-        "impact": [
-          "Greater team growth",
-          "Higher engagement",
-          "Greater predictability of results"
-        ]
+        "key":       "ecommerce-product",
+        "title":     "E-commerce Product Page",
+        "category":  "E-commerce",
+        "image":     "",
+        "summary":   "High-converting product page combining clean UI with persuasive design principles.",
+        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
+        "challenge": "Low add-to-cart rate despite good product quality and competitive pricing.",
+        "solution":  "Redesigned with a clear visual hierarchy, trust signals, and a streamlined purchase flow.",
+        "result":    "Increased add-to-cart conversion and lower cart abandonment.",
+        "liveUrl":   ""
+      },
+      {
+        "key":       "creative-portfolio",
+        "title":     "Creative Portfolio",
+        "category":  "Portfolio",
+        "image":     "",
+        "summary":   "Premium portfolio for a creative professional designed to attract international clients.",
+        "tags":      ["Figma", "HTML", "CSS", "JavaScript"],
+        "challenge": "A talented professional with no strong online presence, missing international opportunities.",
+        "solution":  "Bespoke single-page portfolio with custom animations, multilingual support, and a direct-action contact strategy.",
+        "result":    "Client received first international inquiry within weeks of launch.",
+        "liveUrl":   ""
+      },
+      {
+        "key":       "design-system",
+        "title":     "Corporate Design System",
+        "category":  "Design System",
+        "image":     "",
+        "summary":   "Component library eliminating visual inconsistencies across 400+ projects and accelerating delivery.",
+        "tags":      ["Figma", "HTML", "CSS", "Vue 3"],
+        "challenge": "Visual inconsistencies across all deliverables, requiring manual recreation of each UI from scratch.",
+        "solution":  "Built a reusable component library in Figma and code, with documentation. Reduced per-project setup time dramatically.",
+        "result":    "Faster delivery, consistent visual quality, and a scalable foundation for future projects.",
+        "liveUrl":   ""
       }
     ]
   },
-  "skills": {
-    "label": "Skills",
-    "title": "Technologies and practices I master",
-    "subtitle": "A solid technical foundation combined with product vision and people leadership.",
-    "categories": [
+  "numbers": {
+    "items": [
+      { "value": "400+", "label": "Websites Delivered" },
+      { "value": "4+",   "label": "Years of Experience" },
+      { "value": "3",    "label": "Languages Spoken" },
+      { "value": "∞",    "label": "Attention to Detail" }
+    ]
+  },
+  "process": {
+    "label":    "Process",
+    "title":    "How I work",
+    "subtitle": "From the first conversation to a live website — every step handled with intention.",
+    "steps": [
       {
-        "key": "frontend",
-        "icon": "code",
-        "label": "Front-end",
-        "items": ["HTML5", "CSS3", "JavaScript", "jQuery", "React", "TypeScript", "Responsive Design"]
+        "number":      "01",
+        "title":       "Discovery",
+        "description": "I listen before I design. Understanding your goals, audience, and business is how I make sure the website works — not just looks good."
       },
       {
-        "key": "design",
-        "icon": "design",
-        "label": "Design",
-        "items": ["Figma", "Auto Layout", "UI Design", "UX Design", "Design Systems"]
+        "number":      "02",
+        "title":       "Design",
+        "description": "I design in Figma, creating wireframes and high-fidelity prototypes. You see exactly what the website will look like before a single line of code is written."
       },
       {
-        "key": "quality",
-        "icon": "shield",
-        "label": "Quality",
-        "items": ["QA", "Code Review", "Process Validation", "Checklist Automation"]
+        "number":      "03",
+        "title":       "Development",
+        "description": "I build with clean HTML, CSS, and JavaScript. Pixel-perfect, responsive on every screen size, and optimized for performance."
       },
       {
-        "key": "leadership",
-        "icon": "people",
-        "label": "Leadership",
-        "items": ["Technical Leadership", "People Management", "Mentoring", "Process Improvement", "Product Vision"]
+        "number":      "04",
+        "title":       "Review",
+        "description": "We review together and refine until it's right. My attention to detail means feedback rounds are fast and clear."
       },
       {
-        "key": "productivity",
-        "icon": "rocket",
-        "label": "Productivity",
-        "items": ["Artificial Intelligence", "Workflow Optimization", "Automation", "Metrics", "Continuous Improvement"]
+        "number":      "05",
+        "title":       "Launch",
+        "description": "I handle the final checks, cross-browser testing, and go-live. You get a website that's ready — and a partner you can count on after delivery."
       }
     ]
   },
-  "resume": {
-    "label": "Resume",
-    "title": "Consolidated experience",
-    "subtitle": "A document summarizing my journey, skills and results.",
-    "download": "Download Resume (PDF)",
-    "downloadLang": "Download in {lang}",
-    "certifications": {
-      "title": "Certifications & Training",
-      "empty": "Certifications will be added soon."
-    }
+  "services": {
+    "label":    "Services",
+    "title":    "What I offer",
+    "subtitle": "End-to-end digital experiences for brands that want to stand out.",
+    "items": [
+      {
+        "key":         "website",
+        "title":       "Website Design & Development",
+        "description": "Complete websites from concept to launch — strategy, design, and development in one seamless process."
+      },
+      {
+        "key":         "landing",
+        "title":       "Landing Page Design",
+        "description": "High-converting, visually polished pages designed to turn visitors into leads or customers."
+      },
+      {
+        "key":         "ui",
+        "title":       "UI Design (Figma)",
+        "description": "Interface design, component libraries, and interactive prototypes — ready for development or client presentation."
+      },
+      {
+        "key":         "frontend",
+        "title":       "Front-end Development",
+        "description": "Pixel-perfect HTML, CSS, and JavaScript implementation of any design — responsive, accessible, and fast."
+      }
+    ]
+  },
+  "about": {
+    "label":      "About",
+    "title":      "The person behind the work",
+    "paragraphs": [
+      "I design and build modern websites that combine clean code, intuitive experiences, and visually polished interfaces. What drives me is that moment when a client sees their website for the first time and says — this is exactly what I imagined.",
+      "My background is rare: I think like a designer and build like a developer. That means no lost-in-translation between the Figma file and the browser. What you see in the prototype is what you get in production — down to the last pixel.",
+      "Over 4 years, I've designed and built 400+ websites — from landing pages for startups to full websites for established brands. Every single one built with the same care: from briefing to launch."
+    ],
+    "toolsLabel": "My toolkit",
+    "tools": ["Figma", "HTML5", "CSS3", "JavaScript", "jQuery", "Responsive Design", "UI Design", "UX Design"]
   },
   "contact": {
-    "label": "Contact",
-    "title": "Let's talk",
-    "subtitle": "Open to new opportunities in technical leadership, consulting, and collaboration.",
+    "label":    "Contact",
+    "title":    "Let's build something great.",
+    "subtitle": "Available for website design and front-end development projects worldwide.",
     "links": [
       {
-        "id": "linkedin",
-        "label": "LinkedIn",
-        "description": "Connect and follow my journey",
-        "url": "https://www.linkedin.com/in/enrico-mendes-vienhage/"
-      },
-      {
-        "id": "github",
-        "label": "GitHub",
-        "description": "See my repositories and contributions",
-        "url": "https://github.com/EnricoMendes55"
-      },
-      {
-        "id": "email",
-        "label": "Email",
+        "id":          "email",
+        "label":       "Email",
         "description": "contatoenricomv@gmail.com",
-        "url": "mailto:contatoenricomv@gmail.com"
+        "url":         "mailto:contatoenricomv@gmail.com"
       },
       {
-        "id": "whatsapp",
-        "label": "WhatsApp",
+        "id":          "whatsapp",
+        "label":       "WhatsApp",
         "description": "+55 48 99177-7530",
-        "url": "https://wa.me/5548991777530"
+        "url":         "https://wa.me/5548991777530"
+      },
+      {
+        "id":          "linkedin",
+        "label":       "LinkedIn",
+        "description": "Connect and follow my journey",
+        "url":         "https://www.linkedin.com/in/enrico-mendes-vienhage/"
       }
     ],
     "openNewTab": "Open in new tab"
   },
   "footer": {
-    "made": "Built with",
-    "by": "by Enrico Mendes Vienhage",
-    "rights": "All rights reserved."
+    "role":   "Website & Landing Page Designer · Front-end Developer",
+    "made":   "Built with",
+    "by":     "by Enrico Mendes Vienhage",
+    "rights": "All rights reserved.",
+    "github": "GitHub"
   },
   "theme": {
     "toggle": "Toggle theme",
-    "light": "Light theme",
-    "dark": "Dark theme"
+    "light":  "Light theme",
+    "dark":   "Dark theme"
   },
   "language": {
     "select": "Language",
-    "pt": "Português",
-    "en": "English",
-    "es": "Español"
+    "pt":     "Português",
+    "en":     "English",
+    "es":     "Español"
   },
   "a11y": {
     "skipToContent": "Skip to main content",
-    "menuOpen": "Open navigation menu",
-    "menuClose": "Close navigation menu",
-    "externalLink": "Opens in new tab",
-    "closeModal": "Close modal"
+    "menuOpen":      "Open navigation menu",
+    "menuClose":     "Close navigation menu",
+    "externalLink":  "Opens in new tab",
+    "closeModal":    "Close"
   }
 }

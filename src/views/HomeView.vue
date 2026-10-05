@@ -1,21 +1,21 @@
 <template>
   <main id="main-content" class="main-content">
     <HeroSection />
-    <TrajectorySection />
-    <ImpactSection />
-    <CasesSection />
-    <SkillsSection />
-    <ResumeSection />
+    <WorkSection />
+    <NumbersSection />
+    <ProcessSection />
+    <ServicesSection />
+    <AboutSection />
     <ContactSection />
   </main>
 </template>
 
 <script setup lang="ts">
 import HeroSection from '@/components/sections/HeroSection.vue'
-import TrajectorySection from '@/components/sections/TrajectorySection.vue'
-import ImpactSection from '@/components/sections/ImpactSection.vue'
-import CasesSection from '@/components/sections/CasesSection.vue'
-import SkillsSection from '@/components/sections/SkillsSection.vue'
-import ResumeSection from '@/components/sections/ResumeSection.vue'
+import WorkSection from '@/components/sections/WorkSection.vue'
+import NumbersSection from '@/components/sections/NumbersSection.vue'
+import ProcessSection from '@/components/sections/ProcessSection.vue'
+import ServicesSection from '@/components/sections/ServicesSection.vue'
+import AboutSection from '@/components/sections/AboutSection.vue'
 import ContactSection from '@/components/sections/ContactSection.vue'
 </script>

@@ -3,75 +3,58 @@
     <div class="hero-section__inner container">
       <div class="hero-section__content">
 
-        <!-- Label -->
-        <div class="hero-section__label animate-in">
-          <span class="hero-section__dot" aria-hidden="true"></span>
-          {{ t('hero.greeting') }}
-        </div>
+        <!-- Name -->
+        <p class="hero-section__name animate-in">
+          {{ t('hero.name') }}
+        </p>
 
         <!-- Headline -->
         <h1 class="hero-section__headline animate-in delay-1">
-          {{ t('hero.name') }}
+          {{ t('hero.headline') }}
         </h1>
 
-        <!-- Role -->
+        <!-- Disciplines -->
         <p class="hero-section__role animate-in delay-2">
           {{ t('hero.role') }}
         </p>
 
-        <!-- Subtitle -->
-        <p class="hero-section__subtitle animate-in delay-3">
-          {{ t('hero.subtitle') }}
-        </p>
+        <!-- Trust signals -->
+        <div class="hero-section__trust animate-in delay-3">
+          <span
+            v-for="signal in trustSignals"
+            :key="signal.value"
+            class="hero-section__trust-item"
+          >
+            <strong>{{ signal.value }}</strong>&nbsp;{{ signal.label }}
+          </span>
+        </div>
 
-        <!-- CTA Buttons -->
+        <!-- CTAs -->
         <div class="hero-section__cta animate-in delay-4">
           <BaseButton
             variant="primary"
             size="lg"
             tag="a"
-            href="/Portfolio/resume.pdf"
-            external
+            href="#work"
+            @click.prevent="scrollTo('work')"
           >
-            <template #icon-left><IconDownload /></template>
-            {{ t('hero.cta.resume') }}
+            {{ t('hero.cta.primary') }}
+            <template #icon-right><IconArrowDown /></template>
           </BaseButton>
 
           <BaseButton
             variant="secondary"
             size="lg"
             tag="a"
-            href="https://www.linkedin.com/in/enrico-mendes-vienhage/"
-            external
+            href="#contact"
+            @click.prevent="scrollTo('contact')"
           >
-            {{ t('hero.cta.linkedin') }}
+            {{ t('hero.cta.secondary') }}
           </BaseButton>
-
-          <BaseButton
-            variant="ghost"
-            size="lg"
-            tag="a"
-            href="https://github.com/EnricoMendes55"
-            external
-          >
-            {{ t('hero.cta.github') }}
-          </BaseButton>
-        </div>
-
-        <!-- Metrics -->
-        <div class="hero-section__metrics animate-in delay-5">
-          <div
-            v-for="(metric, i) in metrics"
-            :key="i"
-            class="hero-section__metric"
-          >
-            <span class="hero-section__metric-value">{{ metric.value }}</span>
-            <span class="hero-section__metric-label">{{ metric.label }}</span>
-          </div>
         </div>
       </div>
 
-      <!-- Decorative background grid -->
+      <!-- Decorative background -->
       <div class="hero-section__bg" aria-hidden="true">
         <div class="hero-section__photo" :style="{ backgroundImage: `url(${heroBg})` }"></div>
         <div class="hero-section__grid"></div>
@@ -81,10 +64,10 @@
 
     <!-- Scroll indicator -->
     <a
-      href="#trajectory"
+      href="#work"
       class="hero-section__scroll"
       :aria-label="t('hero.scroll')"
-      @click.prevent="scrollToNext"
+      @click.prevent="scrollTo('work')"
     >
       <span class="hero-section__scroll-text">{{ t('hero.scroll') }}</span>
       <IconArrowDown />
@@ -97,18 +80,18 @@ import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useAnimateOnScroll } from '@/composables/useScrollSpy'
 import BaseButton from '@/components/ui/BaseButton.vue'
-import IconDownload from '@/components/ui/icons/IconDownload.vue'
 import IconArrowDown from '@/components/ui/icons/IconArrowDown.vue'
 import heroBg from '@/assets/hero-bg.webp'
+import type { TrustSignal } from '@/types'
 
 const { t, tm } = useI18n()
 const sectionRef = ref<HTMLElement | null>(null)
 const { observe } = useAnimateOnScroll()
 
-const metrics = computed(() => tm('hero.metrics') as Array<{ value: string; label: string }>)
+const trustSignals = computed(() => tm('hero.trust') as TrustSignal[])
 
-function scrollToNext() {
-  const el = document.getElementById('trajectory')
+function scrollTo(target: string) {
+  const el = document.getElementById(target)
   if (el) {
     const top = el.getBoundingClientRect().top + window.scrollY - 64
     window.scrollTo({ top, behavior: 'smooth' })

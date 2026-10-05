@@ -40,25 +40,22 @@ import { ref, computed, onMounted } from 'vue'
 import type { Component } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useAnimateOnScroll } from '@/composables/useScrollSpy'
-import IconLinkedIn from '@/components/ui/icons/contact/IconLinkedIn.vue'
-import IconGitHub from '@/components/ui/icons/contact/IconGitHub.vue'
 import IconEmail from '@/components/ui/icons/contact/IconEmail.vue'
 import IconWhatsApp from '@/components/ui/icons/contact/IconWhatsApp.vue'
+import IconLinkedIn from '@/components/ui/icons/contact/IconLinkedIn.vue'
 import IconExternalLink from '@/components/ui/icons/IconExternalLink.vue'
+import type { ContactLink } from '@/types'
 
 const { t, tm } = useI18n()
 const sectionRef = ref<HTMLElement | null>(null)
 const { observe } = useAnimateOnScroll()
 
-const contactLinks = computed(() => tm('contact.links') as Array<{
-  id: string; label: string; description: string; url: string
-}>)
+const contactLinks = computed(() => tm('contact.links') as ContactLink[])
 
 const contactIconMap: Record<string, Component> = {
-  linkedin:  IconLinkedIn,
-  github:    IconGitHub,
-  email:     IconEmail,
-  whatsapp:  IconWhatsApp
+  email:    IconEmail,
+  whatsapp: IconWhatsApp,
+  linkedin: IconLinkedIn
 }
 
 onMounted(() => observe(sectionRef.value))
@@ -68,12 +65,12 @@ onMounted(() => observe(sectionRef.value))
 .contact-section {
   &__links {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
     max-width: 900px;
     margin-inline: auto;
 
-    .mobile-only({
+    .tablet({
       grid-template-columns: 1fr;
       max-width: 480px;
     });
@@ -101,7 +98,6 @@ onMounted(() => observe(sectionRef.value))
       }
     }
 
-    // WhatsApp — destaque verde
     &--whatsapp {
       .contact-section__link-icon {
         background: rgb(37 211 102 / 0.12);

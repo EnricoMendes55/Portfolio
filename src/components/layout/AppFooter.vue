@@ -1,6 +1,10 @@
 <template>
   <footer class="app-footer">
     <div class="app-footer__inner container">
+      <div class="app-footer__brand">
+        <p class="app-footer__name">Enrico Mendes Vienhage</p>
+        <p class="app-footer__role">{{ t('footer.role') }}</p>
+      </div>
       <p class="app-footer__copy">
         {{ t('footer.made') }}
         <span class="app-footer__heart" aria-hidden="true">♥</span>
@@ -20,7 +24,7 @@
           rel="noopener noreferrer"
           class="app-footer__link"
           :aria-label="`GitHub — ${t('a11y.externalLink')}`"
-        >GitHub</a>
+        >{{ t('footer.github') }}</a>
         <a
           href="mailto:contatoenricomv@gmail.com"
           class="app-footer__link"
@@ -40,23 +44,47 @@ const currentYear = new Date().getFullYear()
 <style lang="less">
 .app-footer {
   border-top: 1px solid var(--bg-border);
-  padding-block: var(--space-8);
+  padding-block: var(--space-10);
 
   &__inner {
-    .flex-between();
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
     gap: var(--space-4);
-    flex-wrap: wrap;
 
-    .mobile-only({
-      flex-direction: column;
-      align-items: center;
+    .tablet({
+      grid-template-columns: 1fr;
       text-align: center;
+      gap: var(--space-6);
     });
   }
 
-  &__copy {
+  &__brand {
+    .tablet({
+      order: 1;
+    });
+  }
+
+  &__name {
     font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+  }
+
+  &__role {
+    font-size: var(--text-xs);
     color: var(--text-tertiary);
+    margin-top: var(--space-1);
+  }
+
+  &__copy {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    text-align: center;
+
+    .tablet({
+      order: 3;
+    });
   }
 
   &__heart {
@@ -65,7 +93,13 @@ const currentYear = new Date().getFullYear()
 
   &__links {
     .flex-start();
+    justify-content: flex-end;
     gap: var(--space-6);
+
+    .tablet({
+      justify-content: center;
+      order: 2;
+    });
   }
 
   &__link {

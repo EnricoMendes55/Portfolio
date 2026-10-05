@@ -1,52 +1,49 @@
 export type ThemeMode = 'light' | 'dark'
 export type LocaleCode = 'pt-BR' | 'en' | 'es'
 
-export interface TimelineEvent {
-  year: string
-  title: string
-  company: string
-  role: string
-  isCurrent?: boolean
+export interface NavItem {
+  key: string
+  target: string
 }
 
-export interface MetricItem {
+export interface TrustSignal {
   value: string
   label: string
 }
 
-export interface ImpactCard {
+export interface WorkItem {
   key: string
-  icon: string
-  results: string[]
-}
-
-export interface CaseItem {
-  key: string
+  title: string
+  category: string
+  image: string
+  summary: string
   tags: string[]
+  challenge: string
+  solution: string
+  result: string
+  liveUrl: string
 }
 
-export interface SkillCategory {
+export interface NumberItem {
+  value: string
+  label: string
+}
+
+export interface ProcessStep {
+  number: string
+  title: string
+  description: string
+}
+
+export interface ServiceItem {
   key: string
-  icon: string
-  items: string[]
-}
-
-export interface Certification {
-  name: string
-  issuer: string
-  year: string
-  url?: string
+  title: string
+  description: string
 }
 
 export interface ContactLink {
   id: string
   label: string
-  url: string
-  icon: string
   description: string
-}
-
-export interface NavItem {
-  key: string
-  target: string
+  url: string
 }
