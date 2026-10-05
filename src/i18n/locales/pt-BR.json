@@ -8,10 +8,10 @@
   },
   "hero": {
     "name":     "Enrico Mendes Vienhage",
-    "headline": "Eu design e desenvolvo experiências digitais — de websites pixel-perfect a aplicações full-stack.",
-    "role":     "Desenvolvedor Front-end · Designer Web/UI · Líder de Front-end",
+    "role":     "Desenvolvedor Front-end & Designer Web/UI",
+    "headline": "Mais de 4 anos desenvolvendo websites, interfaces e soluções web para projetos reais — hoje também liderando um time de Desenvolvimento Front-end.",
     "trust": [
-      { "value": "400+", "label": "Projetos Entregues" },
+      { "value": "400+", "label": "Websites Entregues" },
       { "value": "4+",   "label": "Anos de Experiência" },
       { "value": "3+",   "label": "Apps em Produção" }
     ],
@@ -24,65 +24,66 @@
   "work": {
     "label":     "Projetos",
     "title":     "Projetos em destaque",
-    "subtitle":  "Problemas reais. Soluções reais. Uma mistura de craft de web design e engenharia moderna.",
+    "subtitle":  "Uma seleção do que já construí — websites, ferramentas e aplicações, cada um criado para resolver um problema específico.",
     "seeCase":   "Ver case",
     "close":     "Fechar",
     "challenge": "O Desafio",
     "solution":  "O Que Desenvolvi",
-    "result":    "O Resultado",
+    "result":    "Impacto",
     "stack":     "Tecnologias",
     "viewLive":  "Ver online",
     "items": [
       {
-        "key":       "ai-briefing",
-        "title":     "Plataforma de Briefing com IA",
-        "category":  "Aplicação Web",
-        "image":     "",
-        "summary":   "Uma plataforma de 16.000 linhas e 11 etapas que transforma o processo de briefing de agências — do preenchimento do cliente até specs prontos para o Figma, com IA e automação.",
-        "tags":      ["Next.js", "React", "TypeScript", "Google Gemini", "Figma API", "Puppeteer", "MariaDB", "JWT"],
-        "challenge": "O processo de briefing de design de websites na agência era totalmente manual — designers passavam horas coletando informações do cliente, extraindo identidade visual e escrevendo specs do zero. O processo era lento, inconsistente e difícil de escalar.",
-        "solution":  "Desenvolvi um sistema guiado completo com 11 etapas, 243 modelos visuais e 26 categorias de componentes (~16.000 linhas de código). O sistema analisa automaticamente o website atual do cliente via Puppeteer, extrai a identidade visual e usa o Google Gemini para gerar e interpretar conteúdo. Ao finalizar, gera um PDF estruturado, dados sincronizados com o Bitrix24, um JSON de componentes para o Figma e um preview navegável do novo website. Princípio: determinismo onde importa, IA onde agrega valor. Papel: desenvolvedor único — da arquitetura ao deploy.",
-        "result":    "Tempo de briefing reduzido de horas para minutos. Todo projeto agora começa com um brief estruturado e pronto para design. O Figma recebe o mapeamento exato de componentes — sem lacunas de interpretação entre cliente e designer.",
-        "liveUrl":   ""
+        "key":          "ai-briefing",
+        "title":        "Plataforma de Briefing com IA",
+        "category":     "Aplicação Web",
+        "image":        "",
+        "outcomeLabel": "O que possibilita",
+        "summary":      "Uma plataforma criada para substituir as etapas manuais e inconsistentes do processo de briefing da agência — 11 etapas guiadas, conteúdo assistido por IA e output estruturado pronto para o design.",
+        "tags":         ["Next.js", "React", "TypeScript", "Google Gemini", "Figma API", "Puppeteer", "MariaDB", "JWT"],
+        "challenge":    "Todo projeto de web design começava da mesma forma: um designer coletando manualmente as informações do cliente, extraindo identidade visual de screenshots e reescrevendo a mesma estrutura de especificação do zero. Lento, inconsistente e totalmente dependente de quem estava fazendo aquele briefing.",
+        "solution":     "Um sistema de briefing guiado com 11 etapas, 243 modelos visuais e 26 categorias de componentes (~16.000 linhas de código). O cliente preenche as informações; o sistema analisa automaticamente o website atual via Puppeteer, extrai a identidade visual e usa o Google Gemini para auxiliar na interpretação do conteúdo. Ao finalizar, gera um PDF estruturado, um dataset sincronizado com o Bitrix24, um mapa de componentes para o Figma e um preview navegável do novo site. Princípio de arquitetura: determinismo onde importa, IA onde agrega valor.",
+        "result":       "O sistema centraliza e automatiza etapas que antes dependiam de coleta e organização manual de informações. Os designers começam cada projeto com um brief completo e estruturado — e um mapa de componentes no Figma já preparado.",
+        "liveUrl":      ""
       },
       {
-        "key":       "bi-dashboard",
-        "title":     "Dashboard de BI e Gestão Front-end",
-        "category":  "Ferramenta Interna",
-        "image":     "",
-        "summary":   "Um dashboard operacional full-stack que transformou a gestão por intuição em tomada de decisão orientada por dados — desenvolvido por mim do início ao fim.",
-        "tags":      ["Nuxt 3", "Vue 3", "Tailwind CSS", "MySQL/MariaDB", "Bitrix24 API", "JWT", "PM2"],
-        "challenge": "Gerenciar um time de 10+ desenvolvedores front-end sem visibilidade em tempo real sobre entregas, performance individual, qualidade de QA ou gargalos de processo. Os relatórios eram manuais e as decisões baseadas em feeling.",
-        "solution":  "Projetei e desenvolvi um dashboard de gestão completo que consome dados em tempo real do Bitrix24, de uma API interna e de um banco MySQL. Acompanha: entregas, tarefas, prazos, QA, tempo de desenvolvimento, histórico de alterações, assiduidade, metas, rankings e relatórios individuais. Todos os gráficos foram desenvolvidos manualmente com SVG e CSS — sem frameworks de gráficos. Responsabilidade total: design, front-end, back-end e DevOps.",
-        "result":    "O time passou a ter visibilidade operacional completa. Avaliações de performance são objetivas e baseadas em dados. Gargalos de processo são identificados e resolvidos antes de escalar. Decisões de liderança sustentadas por números reais.",
-        "liveUrl":   ""
+        "key":          "bi-dashboard",
+        "title":        "Dashboard de BI e Gestão Front-end",
+        "category":     "Ferramenta Interna",
+        "image":        "",
+        "outcomeLabel": "Como ajuda",
+        "summary":      "Um dashboard operacional criado para dar visibilidade real ao trabalho do time de front-end — entregas, qualidade e progresso individual, tudo em um só lugar.",
+        "tags":         ["Nuxt 3", "Vue 3", "Tailwind CSS", "Bitrix24 REST API", "RHiD API", "MySQL/MariaDB", "JWT", "PM2"],
+        "challenge":    "Gerenciar um time de desenvolvimento front-end sem dados reais sobre andamento das entregas, qualidade individual ou gargalos de processo. As decisões dependiam de avaliações subjetivas e relatórios compilados manualmente de fontes diferentes.",
+        "solution":     "Um dashboard de gestão que consome dados em tempo real da REST API do Bitrix24 — tarefas, cards e tempo registrado — e da API RHiD para frequência e banco de horas. Um banco MySQL gerencia as configurações internas: cadastro de equipe, pesos, permissões e outras configurações. Os relatórios são construídos dinamicamente a partir dos dados captados por essas integrações. Todos os gráficos desenvolvidos do zero com SVG e CSS — sem biblioteca de gráficos. Projetei o sistema, desenvolvi o front-end, a camada de integração e as queries do banco, e cuido do deploy.",
+        "result":       "O trabalho do time passou a ter visibilidade, rastreabilidade e estrutura. Cada métrica que o dashboard exibe era compilada manualmente, de fontes diferentes, sem um formato consistente.",
+        "liveUrl":      ""
       },
       {
-        "key":       "clinica-balvedi",
-        "title":     "Clínica Balvedi",
-        "category":  "Website",
-        "image":     "",
-        "summary":   "Website para clínica médica desenvolvido com React e Framer Motion — UI limpa e acessível, arquitetado para um roadmap de SEO, chatbot com IA e funcionalidades de conversão.",
-        "tags":      ["React 18", "Vite", "Framer Motion", "CSS Modules", "GitHub Actions"],
-        "challenge": "Uma clínica médica precisava de uma presença digital moderna e confiável que transmitisse qualidade no atendimento — e que pudesse servir de base para futuras funcionalidades de captação de leads e engajamento com IA.",
-        "solution":  "Desenvolvido com React 18, Vite e Framer Motion para animações suaves e intencionais. A arquitetura é modular por design — cada seção pensada para evoluir. CI/CD via GitHub Actions garante deploys automatizados e consistentes desde o primeiro dia.",
-        "result":    "Fase 1 no ar. O roadmap inclui SEO avançado (otimizado para busca por IA), chatbot de captação de leads, simuladores interativos para pacientes, rastreamento de conversão e iteração baseada em analytics. Desenvolvido para crescer com o negócio.",
-        "liveUrl":   ""
+        "key":          "clinica-balvedi",
+        "title":        "Clínica Balvedi",
+        "category":     "Website",
+        "image":        "",
+        "outcomeLabel": "Próximas etapas",
+        "summary":      "Um website para clínica médica feito para crescer — a versão atual é a base de um roadmap planejado de SEO, captação de leads e funcionalidades com IA.",
+        "tags":         ["React 18", "Vite", "Framer Motion", "CSS Modules", "GitHub Actions"],
+        "challenge":    "Uma clínica médica precisava de uma presença digital moderna e confiável — e que fosse construída de forma a suportar funcionalidades futuras sem exigir um rebuild completo.",
+        "solution":     "Um website em React com animações via Framer Motion, design responsivo e uma arquitetura de componentes modular. Pipeline de CI/CD via GitHub Actions para deploys automatizados e consistentes.",
+        "result":       "SEO avançado, visibilidade para buscas com IA, mecanismos de captação de leads, chatbot de engajamento com pacientes, simuladores interativos e analytics. A arquitetura foi pensada com essas fases em mente — nada disso exige começar do zero.",
+        "liveUrl":      ""
       }
     ]
   },
   "numbers": {
     "items": [
-      { "value": "400+", "label": "Projetos Entregues" },
-      { "value": "4+",   "label": "Anos de Experiência" },
-      { "value": "3+",   "label": "Apps em Produção" },
-      { "value": "10+",  "label": "Desenvolvedores Liderados" }
+      { "value": "400+", "label": "Websites Entregues" },
+      { "value": "4+",   "label": "Anos de Experiência" }
     ]
   },
   "skills": {
     "label":    "Habilidades",
-    "title":    "O que eu trago para o projeto",
-    "subtitle": "Anos de experiência em produção abrangendo design, desenvolvimento front-end e liderança de equipes.",
+    "title":    "Skills & Stack",
+    "subtitle": "Uma base sólida em web e UI design, combinada com uma stack moderna em crescimento ativo — frameworks, APIs e integrações.",
     "legend": {
       "core":   "Expertise principal",
       "modern": "Stack moderna em uso ativo"
@@ -148,17 +149,17 @@
     "label":      "Sobre",
     "title":      "A pessoa por trás dos projetos",
     "paragraphs": [
-      "Trabalho na interseção entre design e desenvolvimento front-end. Ao longo de mais de 4 anos, projetei e desenvolvi 400+ websites e landing pages — de páginas rápidas para negócios locais a experiências totalmente personalizadas para marcas consolidadas. O que eu trago é a capacidade de ir do briefing ao lançamento sem perder nada na tradução entre design e código.",
-      "Minha stack evoluiu bastante. Hoje desenvolvo aplicações web com React, Next.js, Vue 3 e Nuxt — incluindo ferramentas internas, dashboards e plataformas com IA que construí e que estão em produção. Essa evolução não mudou como penso sobre qualidade: cada pixel, interação e linha de código é intencional.",
-      "Liderar o time de front-end na empresa me ensinou que engenharia de verdade vai além de escrever bom código. Padrões de qualidade, processos claros e ciclos de feedback consistentes são o que fazem um time entregar sempre. Carrego essa perspectiva em tudo que trabalho: me importa o resultado, não só a implementação."
+      "Mais de 4 anos trabalhando profissionalmente com desenvolvimento web. Nesse período, construí e entreguei 400+ websites e landing pages para clientes reais. Minha experiência fica na interseção entre design e desenvolvimento front-end: consigo pensar visualmente sobre uma interface e desenvolvê-la — sem perder nada na tradução entre conceito e código.",
+      "Além de websites e landing pages, venho trabalhando em aplicações web mais complexas — com React, Next.js, Vue 3, Nuxt, TypeScript e integrações com APIs, bancos de dados e ferramentas de IA. Projetos que construí do zero e que estão em uso.",
+      "Atualmente também lidero o time de Desenvolvimento Front-end da empresa. Essa responsabilidade me ensinou a pensar além da entrega técnica — sobre qualidade de processo, consistência do time e resultados reais. Continuo desenvolvendo. Mas também presto atenção no que estamos construindo e por quê."
     ],
     "toolsLabel": "Meu toolkit",
     "tools": ["React", "Next.js", "Vue 3", "Nuxt 3", "TypeScript", "JavaScript", "Figma", "HTML5", "CSS / LESS", "Tailwind CSS", "MySQL", "REST APIs"]
   },
   "contact": {
     "label":    "Contato",
-    "title":    "Vamos construir algo juntos.",
-    "subtitle": "Aberto a oportunidades remotas e internacionais — desenvolvimento front-end, design web/UI e aplicações full-stack.",
+    "title":    "Vamos trabalhar juntos.",
+    "subtitle": "Disponível para trabalho remoto e internacional — desenvolvimento front-end, design web/UI e aplicações web.",
     "links": [
       {
         "id":          "email",

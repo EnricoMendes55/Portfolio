@@ -8,15 +8,15 @@
           {{ t('hero.name') }}
         </p>
 
-        <!-- Headline -->
-        <h1 class="hero-section__headline animate-in delay-1">
-          {{ t('hero.headline') }}
-        </h1>
-
-        <!-- Disciplines -->
-        <p class="hero-section__role animate-in delay-2">
+        <!-- Role -->
+        <p class="hero-section__role animate-in delay-1">
           {{ t('hero.role') }}
         </p>
+
+        <!-- Headline -->
+        <h1 class="hero-section__headline animate-in delay-2">
+          {{ t('hero.headline') }}
+        </h1>
 
         <!-- Trust signals -->
         <div class="hero-section__trust animate-in delay-3">

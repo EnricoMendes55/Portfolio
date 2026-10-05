@@ -105,7 +105,7 @@
               </div>
 
               <div class="work-section__modal-section">
-                <h4>{{ t('work.result') }}</h4>
+                <h4>{{ activeCase.outcomeLabel || t('work.result') }}</h4>
                 <p>{{ activeCase.result }}</p>
               </div>
 

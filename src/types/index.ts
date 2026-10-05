@@ -21,6 +21,7 @@ export interface WorkItem {
   challenge: string
   solution: string
   result: string
+  outcomeLabel?: string
   liveUrl: string
 }
 
