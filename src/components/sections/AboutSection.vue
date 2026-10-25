@@ -6,7 +6,7 @@
         <div class="about-section__photo-wrap animate-in">
           <div class="about-section__photo">
             <img
-              :src="aboutPhotoUrl"
+              :src="heroBg"
               :alt="t('hero.name')"
               loading="lazy"
               class="about-section__img"
@@ -46,6 +46,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useAnimateOnScroll } from '@/composables/useScrollSpy'
+import heroBg from '@/assets/hero-bg.webp'
 
 const { t, tm } = useI18n()
 const sectionRef = ref<HTMLElement | null>(null)
@@ -53,7 +54,6 @@ const { observe } = useAnimateOnScroll()
 
 const paragraphs = computed(() => tm('about.paragraphs') as string[])
 const tools = computed(() => tm('about.tools') as string[])
-const aboutPhotoUrl = `${import.meta.env.BASE_URL}about-photo.webp`
 
 onMounted(() => observe(sectionRef.value))
 </script>
@@ -98,7 +98,7 @@ onMounted(() => observe(sectionRef.value))
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: right top;
   }
 
   &__title {
