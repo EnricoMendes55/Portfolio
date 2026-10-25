@@ -98,11 +98,7 @@ onMounted(() => observe(sectionRef.value))
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: right top;
-
-    .mobile-only({
-      object-position: 70%;
-    });
+    object-position: 70%;
   }
 
   &__title {
