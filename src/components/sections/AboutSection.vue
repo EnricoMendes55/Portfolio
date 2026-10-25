@@ -61,25 +61,28 @@ onMounted(() => observe(sectionRef.value))
 <style lang="less">
 .about-section {
   &__layout {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: var(--space-16);
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    align-items: flex-start;
 
-    .tablet({
-      grid-template-columns: 1fr;
-      gap: var(--space-12);
+    .desktop({
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: var(--space-16);
+      align-items: start;
     });
   }
 
   &__photo-wrap {
-    position: sticky;
-    top: calc(var(--header-height) + var(--space-8));
+    width: 100%;
+    max-width: 300px;
 
-    .tablet({
-      position: static;
-      max-width: 360px;
-      margin-inline: auto;
+    .desktop({
+      position: sticky;
+      top: calc(var(--header-height) + var(--space-8));
+      max-width: unset;
+      width: auto;
     });
   }
 

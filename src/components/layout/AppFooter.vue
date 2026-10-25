@@ -48,21 +48,20 @@ const currentYear = new Date().getFullYear()
 
   &__inner {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
-    gap: var(--space-4);
+    text-align: center;
+    gap: var(--space-6);
 
-    .tablet({
-      grid-template-columns: 1fr;
-      text-align: center;
-      gap: var(--space-6);
+    .desktop({
+      grid-template-columns: 1fr auto 1fr;
+      text-align: left;
+      gap: var(--space-4);
     });
   }
 
   &__brand {
-    .tablet({
-      order: 1;
-    });
+    // DOM order: brand first — correct for both mobile and desktop
   }
 
   &__name {
@@ -81,10 +80,6 @@ const currentYear = new Date().getFullYear()
     font-size: var(--text-xs);
     color: var(--text-tertiary);
     text-align: center;
-
-    .tablet({
-      order: 3;
-    });
   }
 
   &__heart {
@@ -93,12 +88,11 @@ const currentYear = new Date().getFullYear()
 
   &__links {
     .flex-start();
-    justify-content: flex-end;
+    justify-content: center;
     gap: var(--space-6);
 
-    .tablet({
-      justify-content: center;
-      order: 2;
+    .desktop({
+      justify-content: flex-end;
     });
   }
 

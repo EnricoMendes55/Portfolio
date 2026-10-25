@@ -65,14 +65,15 @@ onMounted(() => observe(sectionRef.value))
 .contact-section {
   &__links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-    max-width: 900px;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    max-width: 480px;
     margin-inline: auto;
 
-    .tablet({
-      grid-template-columns: 1fr;
-      max-width: 480px;
+    .desktop({
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 900px;
+      gap: var(--space-6);
     });
   }
 
